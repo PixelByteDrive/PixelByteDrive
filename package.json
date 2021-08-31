@@ -1,0 +1,15 @@
+{
+  "name": "defresh",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "16.6.0"
+  },
+  "dependencies": {
+    "discord.js": "^13.1.0",
+    "express": "^4.17.1",
+    "fs": "^0.0.2"
+  }
+}

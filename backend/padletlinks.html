@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <div class="everything"> 
+  </div>
+  <div class="everything2">
+  </div>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <head>
+    <link
+      href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  </head>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+  </head>
+  <style>
+    @use "@material/fab";
+
+    @include fab.core-styles;
+    @use "@material/snackbar/mdc-snackbar";
+    @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #b3b3b3;
+    }
+    h1 {
+      padding: 0.5em;
+      color: white;
+      font-family: "Open Sans", sans-serif;
+    }
+    hr {
+      color: white;
+    }
+    .mdc-top-app-bar {
+      background-color: #404040;
+    }
+  </style>
+  <header class="mdc-top-app-bar animate__animated animate__slideInDown">
+    <div class="mdc-top-app-bar__row">
+      <section
+        class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start"
+      >
+        <button
+          class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button"
+          aria-label="Open navigation menu"
+          onclick="document.location='https://www.pixeldrive.xyz/'"
+        >
+          chevron_left
+        </button>
+        <span class="mdc-top-app-bar__title">External Padlet Links</span>
+      </section>
+    </div>
+  </header>
+  <main class="mdc-top-app-bar--fixed-adjust">
+    <br />
+    <button
+      class="mdc-button animate__animated animate__slideInLeft"
+      onclick="document.location='https://pixeldrive.padlet.org/killianus082/board'"
+    >
+      <span class="mdc-button__ripple"></span>
+      <span class="mdc-button__label">The Board</span>
+      <i class="material-icons mdc-button__icon" aria-hidden="true">launch</i>
+    </button>
+    <br />
+    <br />
+    <button
+      class="mdc-button animate__animated animate__slideInLeft"
+      onclick="document.location='https://pixeldrive.padlet.org/killianus082/reports'"
+    >
+      <span class="mdc-button__ripple"></span>
+      <span class="mdc-button__label">Bug Reports</span>
+      <i class="material-icons mdc-button__icon" aria-hidden="true">launch</i>
+    </button>
+    <br />
+    <br />
+    <button
+      class="mdc-button animate__animated animate__slideInLeft"
+      onclick="document.location='https://pixeldrive.padlet.org/killianus082/feedback'"
+    >
+      <span class="mdc-button__ripple"></span>
+      <span class="mdc-button__label">Feedback / Suggestions</span>
+      <i class="material-icons mdc-button__icon" aria-hidden="true">launch</i>
+    </button>
+    <br />
+    <br />
+    <button
+      class="mdc-button animate__animated animate__slideInLeft"
+      onclick="document.location='https://pixeldrive.padlet.org/andrewjchen/PixelByteNews'"
+    >
+      <span class="mdc-button__ripple"></span>
+      <span class="mdc-button__label">News + Announcements</span>
+      <i class="material-icons mdc-button__icon" aria-hidden="true">launch</i>
+    </button>
+    <div class="mdc-snackbar" id="redirecting">
+      <div
+        class="mdc-snackbar__surface"
+        role="status"
+        aria-relevant="additions"
+      >
+        <div class="mdc-snackbar__label" aria-atomic="false">
+          Redirecting...
+        </div>
+        <div class="mdc-snackbar__actions" aria-atomic="true"></div>
+      </div>
+    </div>
+  </main>
+  <script>
+    function snackBarOpen() {
+      document
+        .getElementById("redirecting")
+        .classList.add("mdc-snackbar--open");
+      document.getElementById("redirecting").classList.add("animate__animated");
+      document
+        .getElementById("redirecting")
+        .classList.add("animate__slideInUp");
+    }
+  </script>
+</html>
