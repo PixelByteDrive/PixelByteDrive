@@ -8,17 +8,16 @@
     <p>
       You clicked this button <b id="counter">0</b> times.
     </p>
-    <button id="clickbutton">
+    <button id="clickbutton" onclick="click()">
       Click
     </button>
     <script>
       var clickbutton = document.getElementById("clickbutton")
       var counter = document.getElementById("counter")
-      document.addEventListener("keyup", function(event) {
-        if (event.keyCode === 13) {
-          document.location
-        }
-      });
+      var count = 0
+      function click() {
+        count =+ 1
+      }
     </script>
   </body>
 </html>

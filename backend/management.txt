@@ -15,5 +15,3 @@ wallpaper=https://wallpapercave.com/wp/wp2698095.jpg
 allow_popup_windows=yes
 disable_address_bar=no
 screen_settings=VGA:1920x1080:60.00
-
-#

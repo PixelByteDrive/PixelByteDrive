@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>hi</title>
+<link
+  rel="stylesheet"
+  href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"
+/>
+</head>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      cursor: default;
+      overflow-x: hidden;
+      z-index: -2;
+      font-family: 'Open Sans', sans-serif;
+    }
+    @keyframes animation {
+      0% {
+        border-radius: 100%;
+        width: 0px;
+        height: 0px;
+        background-color: #34a1eb;
+        border: 0px solid black;
+        top: 100%;
+        left: 100%;
+        transform: translate(-50%, -50%);
+      }
+      100% {
+        border-radius: 100%;
+        width: 5000px;
+        height: 5000px;
+      }
+    }
+    @keyframes close {
+      0% {
+        border-radius: 100%;
+        width: 5000px;
+        height: 5000px;
+        background-color: #34a1eb;
+        border: 0px solid black;
+        top: 0%;
+        left: 0%;
+        transform: translate(-50%, -50%);
+      }
+      100% {
+        border-radius: 100%;
+        width: 0px;
+        height: 0px;
+        top: 100%;
+        left: 100%;
+      }
+    }
+    .loader {
+      width: 5000px;
+      height: 5000px;
+      top: 0%;
+      left: 0%;
+      transform: rotate(0deg);
+      transform: translate(-50%, -50%);
+      position: fixed;
+      text-align: center;
+      background-color: #34a1eb;
+      font-family: "Roboto", sans-serif;
+      animation-name: animation;
+      animation-duration: 0.5s;
+      animation-iteration-count: 1;
+      border: 0px solid black;
+      border-radius: 100%;
+    }
+    .loaderclose {
+      width: 0px;
+      height: 0px;
+      top: 100%;
+      left: 100%;
+      transform: rotate(0deg);
+      transform: translate(-50%, -50%);
+      position: fixed;
+      text-align: center;
+      background-color: #34a1eb;
+      font-family: "Roboto", sans-serif;
+      animation-name: close;
+      animation-duration: 0.5s;
+      animation-iteration-count: 1;
+      border: 0px solid black;
+      border-radius: 100%;
+    }
+  html, body {
+    cursor: none;
+  }
+  @keyframes in {
+    0% {
+      top: 50%;
+      left: -50%;
+    }
+    100% {
+      top: 50%;
+      left: 50%;
+    }
+  }
+  @keyframes out {
+      0% {
+        top: 50%;
+        left: 50%;
+      }
+      100% {
+        top: 50%;
+        left: 150%;
+      }
+  }
+  #cursor {
+      background-color: #34a1eb;
+      position: absolute;
+      width: 35px;
+      height: 35px;
+      transform: translate(-50%, -50%);
+      border-radius: 100%;
+      transition: 0.1s;
+      box-shadow: 1px 1px 4px #888888;
+      overflow: hidden;
+      border-top-left-radius: 0;
+   }
+  #innercursor {
+      background-color: #72c4fc;
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      transform: translate(-50%, -50%);
+      border-radius: 100%;
+      top: 50%;
+      left: 50%;
+      transition: 0.25s;
+      border-top-left-radius: 0;
+  }
+  #cursor:active {
+      width: 30px;
+      height: 30px;
+   }
+  #innercursor:active {
+      width: 0px;
+      height: 0px;
+  }
+  .arrow {
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    top: -50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    animation-name: out;
+    animation-duration: 0.25s;
+  }
+  .openarrow {
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    animation-name: in;
+    animation-duration: 0.5s;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+  }
+  </style>
+<body>
+<script>
+  document.onmousemove = function(e) { 
+        var x = e.clientX; 
+        var y = e.clientY; 
+        document.getElementById('cursor').style.marginLeft  = x+"px";
+        document.getElementById('cursor').style.marginTop  = y+"px";
+
+  }
+  document.onmousedown = function() {
+    document.getElementById("arrow").className = "openarrow"
+  }
+  document.onmouseup = function() {
+    document.getElementById("arrow").className = "arrow"
+  }
+  document.onclick = function() {
+    transition();
+    setTimeout(function(){document.location='https://www.pixeldrive.xyz/transitions/2.html'},1000)
+  }
+</script>
+  <div id="cursor"><div id="innercursor"></div><img draggable="false" id="arrow" class="arrow" src="https://cdn.glitch.com/c5a2c49e-e6a6-462b-bc27-6589c7056565%2Farrow_forward_white_24dp.svg?v=1631901655671"></div>
+  <div id="div" class="loaderclose">
+  </div>
+  <script>
+    var div = document.getElementById('div')
+    function transition() {
+     var audio = new Audio('https://cdn.glitch.com/c5a2c49e-e6a6-462b-bc27-6589c7056565%2Fnavigation_backward-selection.ogg?v=1630463539518');
+     audio.play();
+     div.className = "loader";
+    }
+  </script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</body>
+</html>

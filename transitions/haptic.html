@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    html,
+    body {
+      background-color: black;
+    }
+    #hapticbutton {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      background-color: rgba(128,128,128,1);
+      opacity: 0.25;
+      width: 150px;
+      height: 150px;
+      border-radius: 2.5em;
+      transition: 1s;
+    }
+    #hapticmenu {
+      position: absolute;
+      transform: translate(0%, -50%);
+      top: 50%;
+      left: 57.5%;
+      background-color: rgba(128,128,128, 0.5);
+      width: 0px;
+      height: 0px;
+      border-radius: 1em;
+      transition: 0.5s;
+      overflow: hidden;
+      opacity: 0;
+    }
+    #button1 {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      background-color: rgba(255, 255, 255, 0);
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      color: white;
+      font-size: 16pt;
+      border: none;
+    }
+    #button1:hover {
+      background-color: rgba(255, 255, 255, 0.25);
+    }
+  </style>
+  <div id="hapticbutton"></div>
+  <div id="hapticmenu"><button id="button1" onclick="appopen()">  Return</button></div>
+  <script>
+    
+    var open = false
+    document
+      .getElementById("hapticbutton")
+      .addEventListener("mousedown", function() {
+       if (open == false) {
+        open = true
+        document.getElementById("hapticbutton").style.width = "100px";
+        document.getElementById("hapticbutton").style.height = "100px";
+        document.getElementById("hapticbutton").style.animationTimingFunction = "ease-in";
+        document.getElementById("hapticbutton").style.transition = "1s";
+        setTimeout(function(){
+          document.getElementById("hapticbutton").style.width = "150px";
+          document.getElementById("hapticbutton").style.height = "150px";
+          document.getElementById("hapticbutton").style.animationTimingFunction = "ease-out";
+        },500)
+        setTimeout(function(){
+          document.getElementById("hapticbutton").style.width = "250px";
+          document.getElementById("hapticbutton").style.height = "250px";
+          document.getElementById("hapticbutton").style.animationTimingFunction = "ease-out";
+          document.getElementById("hapticbutton").style.transition = "0.5s";
+          document.getElementById("hapticmenu").style.width = "300px";
+          document.getElementById("hapticmenu").style.height = "75px";
+          document.getElementById("hapticmenu").style.left = "62.5%";
+          document.getElementById("hapticmenu").style.opacity = "1";
+          document.getElementById("hapticmenu").style.borderRadius = "1em";
+        },1000)
+       } else {
+          open = false
+          document.getElementById("hapticbutton").style.width = "150px";
+          document.getElementById("hapticbutton").style.height = "150px";
+          document.getElementById("hapticbutton").style.animationTimingFunction = "ease-out";
+          document.getElementById("hapticmenu").style.width = "0px";
+          document.getElementById("hapticmenu").style.height = "0px";
+          document.getElementById("hapticmenu").style.left = "57.5%";
+          document.getElementById("hapticmenu").style.opacity = "0";
+          document.getElementById("hapticmenu").style.borderRadius = "0";
+          document.getElementById("hapticbutton").style.borderRadius = "2.5em";
+          document.getElementById("hapticbutton").style.backgroundColor = "rgba(128,128,128,1)";
+          document.getElementById("hapticbutton").style.opacity = "0.25";
+       }
+      });
+    function appopen() {
+        document.getElementById("hapticbutton").style.width = "150px";
+        document.getElementById("hapticbutton").style.height = "150px";
+        document.getElementById("hapticbutton").style.animationTimingFunction = "ease-out";
+        document.getElementById("hapticmenu").style.width = "0px";
+        document.getElementById("hapticmenu").style.height = "0px";
+        document.getElementById("hapticmenu").style.left = "57.5%";
+        document.getElementById("hapticmenu").style.opacity = "0";
+        document.getElementById("hapticmenu").style.borderRadius = "0";
+        setTimeout(function(){
+          document.getElementById("hapticbutton").style.width = "100%";
+          document.getElementById("hapticbutton").style.height = "100%";
+          document.getElementById("hapticbutton").style.borderRadius = "0";
+          document.getElementById("hapticbutton").style.backgroundColor = "#ffffff";
+          document.getElementById("hapticbutton").style.opacity = "1";
+          setTimeout(function(){document.location = "index.html";},500)
+        },500)
+    }
+  </script>
+</html>

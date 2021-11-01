@@ -1,0 +1,151 @@
+body {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: "Trebuchet MS";
+}
+#sidebar {
+  border: 5px solid gray;
+  width: 15%;
+  height: 25%;
+  float: left;
+  clear: left;
+  border-radius: 0.5em;
+}
+#button {
+  background-color: #dddddd;
+  width: 100%;
+  transition: 0.3s;
+  border: none;
+  float: center;
+  font-size: 24px;
+  font-family: "Verdana";
+  border-top-left-radius: 0.1em;
+  border-top-right-radius: 0.1em;
+}
+#button:hover {
+  background-color: #000000;
+  color: white;
+  width: 110%;
+}
+#button2 {
+  background-color: #cccccc;
+  width: 100%;
+  transition: 0.3s;
+  border: none;
+  float: center;
+  font-size: 24px;
+  font-family: "Verdana";
+}
+#button2:hover {
+  background-color: #000000;
+  color: white;
+  width: 110%;
+}
+#button3 {
+  background-color: #bfbfbf;
+  width: 100%;
+  transition: 0.3s;
+  border: none;
+  float: center;
+  font-size: 24px;
+  font-family: "Verdana";
+}
+#button3:hover {
+  background-color: #000000;
+  color: white;
+  width: 110%;
+}
+#heading {
+  text-align: center;
+  font-family: "Trebuchet MS";
+  border: 5px dashed gray;
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 0.5em;
+}
+#maintext {
+  float: right;
+  width: 82.5%;
+  height: 50%;
+  font-size: 16;
+  font-family: "Trebuchet MS";
+  color: #ffffff;
+}
+#button4 {
+  background-color: #bfbfbf;
+  width: 100%;
+  transition: 0.3s;
+  border: none;
+  float: center;
+  font-size: 24px;
+  font-family: "Verdana";
+}
+#button4:hover {
+  background-color: #000000;
+  color: white;
+  width: 110%;
+}
+#button5 {
+  background-color: #808080;
+  width: 100%;
+  transition: 0.3s;
+  border: none;
+  float: center;
+  font-size: 24px;
+  font-family: "Verdana";
+}
+#button5:hover {
+  background-color: #000000;
+  color: white;
+  width: 110%;
+}
+#button6 {
+  background-color: #454545;
+  width: 100%;
+  border: none;
+  float: center;
+  font-size: 24px;
+  font-family: "Verdana";  
+  transition: 0.3s;
+  color: white;
+}
+#button6:hover {
+  background-color: #000000;
+  color: white;
+  width: 110%;
+}
+#privacy {
+  float: center;
+}
+#button7 {
+  background-color: #d8d8d8;
+  width: 100%;
+  border: none;
+  float: center;
+  font-size: 24px;
+  font-family: "Verdana";  
+  transition: 0.3s;
+  color: black;
+}
+#button7:hover {
+  background-color: #000000;
+  color: white;
+  width: 110%;
+}
+#button8 {
+  background-color: #b8b8b8;
+  width: 100%;
+  border: none;
+  float: center;
+  font-size: 24px;
+  font-family: "Verdana";  
+  transition: 0.3s;
+  color: black;
+  border-bottom-right-radius: 0.1em;
+  border-bottom-left-radius: 0.1em;
+}
+#button8:hover {
+  background-color: #000000;
+  color: white;
+  width: 110%;
+}

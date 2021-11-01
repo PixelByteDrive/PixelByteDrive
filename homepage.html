@@ -1,60 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="manifest" href="manifest.json">
+  <meta name="description" content="PixelByteDrive is a community of various features.">
   <link
     rel="stylesheet"
     href="https://www.pixeldrive.xyz/backend/style/sheets/main.css"
   />
   <head>
-    <link
-      rel="icon"
-      type="image/png"
-      href="https://cdn.glitch.com/c5a2c49e-e6a6-462b-bc27-6589c7056565%2Fb97ef5e2-d175-4e6c-a75a-03af99472ae3.image.png?v=1629290864437"
-    />
+    <link rel="icon" type="image/png" href="https://cdn.glitch.com/c5a2c49e-e6a6-462b-bc27-6589c7056565%2Fpixel.png?v=1632321642330"/>
   </head>
-  <style>
-    .mdc-dialog__button {
-      width: 20%;
-      font-size: 20px;
-    }
-    .mdc-dialog__button:hover {
-      width: 20%;
-      color: #ffffff;
-      font-size: 14px;
-    }
-  </style>
-  <head>
-    <link
-      href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
-      rel="stylesheet"
-    />
-    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-  </head>
-  <head>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
-  </head>
-  <head>
-    <script>
-      (function(w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-TF3BQQ4");
-    </script>
-  </head>
-  <meta name="theme-color" content="#222222" />
-  <link rel="stylesheet" href="backend/style/sheets/main.css" />
+  <meta id="theme" name="theme-color" content="#222222" />
   <title>PixelByteDrive</title>
   <body id="background">
     <noscript
@@ -70,8 +26,8 @@
         vertical-align: middle;
       }
     </style>
-    <div id="heading" class="animate__animated animate__fadeInDownBig">
-      <h2>
+    <div id="heading">
+      <h1>
         <a href="/">
           <img
             class="headinglogo"
@@ -79,12 +35,9 @@
             id="logo"
             alt="P"/></a
         >ixelByteDrive
-      </h2>
-      <p style="text-align:center;">
-        PixelByteDrive Privacy Policy has been updated. Visit <a href="https://www.pixeldrive.xyz/legal/privacypolicy.html">Privacy Policy</a>
-      </p>
+      </h1>
     </div>
-    <div id="sidebar" class="animate__animated animate__fadeInLeftBig">
+    <div id="sidebar">
       <button
         trans="document.location='https://www.pixeldrive.xyz/homepage.html'"
         title="Home"
@@ -98,22 +51,16 @@
         Updates
       </button>
       <button
-        onclick="document.location='https://www.pixeldrive.xyz/intro.html'"
-        title="About"
+        onclick="document.location='https://ijap.glitch.me/'"
+        title="Issac's Website"
       >
-        About
+        Issac's Website
       </button>
       <button
         onclick="document.location='https://www.pixeldrive.xyz/andrew.html'"
         title="Andrew"
       >
         Andrew
-      </button>
-      <button
-        onclick="window.open('https://ijap.glitch.me/')"
-        title="Issac's Website"
-      >
-        Issac's Website
       </button>
       <button
         onclick="warningdeveloper()"
@@ -140,90 +87,26 @@
         Guest1046 (Scratch)
       </button>
       <button
-        onclick="warning3()"
+        onclick="document.location=''"
         title="FunBot (Discord)"
       >
         FunBot (Discord)
       </button>
       <hr/>
-      <h4>
-        DUUUDE WHY DID THEY HAVE TO START SCHOOL SO EARLY (immediately has flashbacks of all the things he did)
-      </h4>
+      <h2><a href="old/">Old Website</a></h2>
       <hr/>
-      <h4>
+      <h2>
         <a href="legal/privacypolicy.html">Privacy Policy</a> •
         <a href="legal/license.md">License</a> •
         <a href="mailto:killianus2008@pixeldrive.xyz">Email me</a>
-      </h4>
+      </h2>
     </div>
-    <!-- end of sidebar -->
-    <div class="mdc-dialog__scrim"></div>
-
-    <div class="mdc-dialog" id="warning-developer">
-      <div class="mdc-dialog__container">
-        <div
-          class="mdc-dialog__surface"
-          role="alertdialog"
-          aria-modal="true"
-          aria-labelledby="my-dialog-title"
-          aria-describedby="my-dialog-content"
-        >
-          <div class="mdc-dialog__title">Are you sure?</div>
-          <div class="mdc-dialog__content" id="my-dialog-content-developer">
-            This page contains developer content, and should not be accessed by
-            non-invited developers. By proceeding to the page, you say that you
-            are an invited developer. Unauthorized access to this page can
-            result in a PERMANENT IP BAN. WOULD YOU LIKE TO PROCEED?
-          </div>
-          <div class="mdc-dialog__actions">
-            <button
-              type="button"
-              class="mdc-button mdc-dialog__button"
-              onclick="document.getElementById('warning-developer').classList.remove('mdc-dialog--open'); document.location = 'https://www.pixeldrive.xyz/auth.html'"
-            >
-              <div class="mdc-button__ripple"></div>
-              <span class="mdc-button__label">Continue</span>
-            </button>
-            <button
-              type="button"
-              class="mdc-button mdc-dialog__button"
-              onclick="document.getElementById('warning-developer').classList.remove('mdc-dialog--open')"
-            >
-              <div class="mdc-button__ripple"></div>
-              <span class="mdc-button__label">Cancel</span>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="mdc-dialog__scrim"></div>
-    </div>
-  </body>
-  <script>
-    function warning() {
-      var dialog = document
-        .getElementById("warning")
-        .classList.add("mdc-dialog--open");
-    }
-    function warningdeveloper() {
-      var dialog = document
-        .getElementById("warning-developer")
-        .classList.add("mdc-dialog--open");
-    }
-    function warning2() {
-      var dialog = document
-        .getElementById("warning2")
-        .classList.add("mdc-dialog--open");
-    }
-    function warning3() {
-      var dialog = document
-        .getElementById("warning3")
-        .classList.add("mdc-dialog--open");
-    }
-  </script>
-  <div id="maintext" class="animate__animated animate__fadeInUp">
-    <h2>
+    <!-- end of sidebar -->  
+</body>
+  <div id="maintext">
+    <h1>
       Homepage
-    </h2>
+    </h1>
     <hr />
     <p>
       Welcome to PixelByteDrive, a community of creating amazing experiences,
@@ -234,116 +117,14 @@
       <a href="/andrew.html">Andrew</a> (who is very, <i>very,</i> cool.) [/j
       /nsrs]
     </p>
+    <i><strike>Killian</strike> <strike>Andrew</strike> Killian did most of the work.</i>
     <div class="w3-card-4" style="background-color: #ffffff;">
       <h1 style="color: #969696"></h1>
     </div>
   </div>
-  <div class="mdc-dialog" id="warning">
-    <div class="mdc-dialog__container">
-      <div
-        class="mdc-dialog__surface"
-        role="alertdialog"
-        aria-modal="true"
-        aria-labelledby="my-dialog-title"
-        aria-describedby="my-dialog-content"
-      >
-        <div class="mdc-dialog__title">Are you sure?</div>
-        <div class="mdc-dialog__content" id="my-dialog-content">
-          This webpage contains content from a third-party application known as
-          ROBLOX. Would you like to proceed?
-        </div>
-        <div class="mdc-dialog__actions">
-          <button
-            type="button"
-            class="mdc-button mdc-dialog__button"
-            onclick="document.getElementById('warning').classList.remove('mdc-dialog--open'); document.location = 'https://www.pixeldrive.xyz/backend/studioclub.html'"
-          >
-            <div class="mdc-button__ripple"></div>
-            <span class="mdc-button__label">Continue</span>
-          </button>
-          <button
-            type="button"
-            class="mdc-button mdc-dialog__button"
-            onclick="document.getElementById('warning').classList.remove('mdc-dialog--open')"
-          >
-            <div class="mdc-button__ripple"></div>
-            <span class="mdc-button__label">Cancel</span>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="mdc-dialog__scrim"></div>
-  </div>
-    <div class="mdc-dialog" id="warning2">
-    <div class="mdc-dialog__container">
-      <div
-        class="mdc-dialog__surface"
-        role="alertdialog"
-        aria-modal="true"
-        aria-labelledby="my-dialog-title"
-        aria-describedby="my-dialog-content"
-      >
-        <div class="mdc-dialog__title">Are you sure?</div>
-        <div class="mdc-dialog__content" id="my-dialog-content2">
-          This webpage contains content from a third-party application known as
-          Scratch. Would you like to proceed?
-        </div>
-        <div class="mdc-dialog__actions">
-          <button
-            type="button"
-            class="mdc-button mdc-dialog__button"
-            onclick="document.getElementById('warning2').classList.remove('mdc-dialog--open'); document.location = 'https://scratch.mit.edu/users/Guest1046/'"
-          >
-            <div class="mdc-button__ripple"></div>
-            <span class="mdc-button__label">Continue</span>
-          </button>
-          <button
-            type="button"
-            class="mdc-button mdc-dialog__button"
-            onclick="document.getElementById('warning2').classList.remove('mdc-dialog--open')"
-          >
-            <div class="mdc-button__ripple"></div>
-            <span class="mdc-button__label">Cancel</span>
-          </button>
-        </div>
-      </div>
-    </div>
-      <div class="mdc-dialog__scrim"></div>
-  </div>
-    <div class="mdc-dialog" id="warning3">
-    <div class="mdc-dialog__container">
-      <div
-        class="mdc-dialog__surface"
-        role="alertdialog"
-        aria-modal="true"
-        aria-labelledby="my-dialog-title"
-        aria-describedby="my-dialog-content"
-      >
-        <div class="mdc-dialog__title">Are you sure?</div>
-        <div class="mdc-dialog__content" id="my-dialog-content3">
-          This webpage contains content from a third-party application known as
-          Discord. Would you like to proceed?
-        </div>
-        <div class="mdc-dialog__actions">
-          <button
-            type="button"
-            class="mdc-button mdc-dialog__button"
-            onclick="document.getElementById('warning3').classList.remove('mdc-dialog--open'); document.location = 'https://www.pixeldrive.xyz/backend/funbot.html'"
-          >
-            <div class="mdc-button__ripple"></div>
-            <span class="mdc-button__label">Continue</span>
-          </button>
-          <button
-            type="button"
-            class="mdc-button mdc-dialog__button"
-            onclick="document.getElementById('warning3').classList.remove('mdc-dialog--open')"
-          >
-            <div class="mdc-button__ripple"></div>
-            <span class="mdc-button__label">Cancel</span>
-          </button>
-        </div>
-      </div>
-    </div>
-      <div class="mdc-dialog__scrim"></div>
-  </div>
+  <script>
+    var theme = document.getElementById('theme')
+    theme.content = "#000000"
+    setTimeout(function(){theme.content = "#222222"},4300)
+  </script>
 </html>

@@ -1,27 +1,40 @@
 var express = require("express");
+var online = process.env.online;
 var app = express();
 app.use(express.static(__dirname));
-app.get("/", function(request, response) {
-  response.sendFile(__dirname + "/homepage.html");
-});
+if (online == "true") {
+  app.get("/", function(request, response) {
+    response.sendFile(__dirname + "/homepage.html");
+  });
+} else {
+  app.get("", function(request, response) {
+    response.sendFile(__dirname + "/error/maintenance.html");
+  });
+}
 app.use((req, res) => {
   res.status(404).sendFile(__dirname + "/error/404.html");
 });
 app.listen(8080);
-console.log("Andrew is Cool");
 
 // FunBot Source Code
 const http = require('http');
 app.get("/", (request, response) => { 
-  console.log(Date.now() + "Ping Received");     
+  console.log(Date.now() + "Ping Received");
   response.sendStatus(200);
 });
 app.listen(process.env.PORT);
 const Discord = require("discord.js");
 const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] })
-client.on("ready", async () => { 
-  console.log(`bot is online!`); client.user.setActivity("h. | ?help | ?about | ?invite", {type: "WATCHING"});
-      }); 
+if (online == "true") {
+  client.on("ready", async () => { 
+    console.log(`bot is online!`); client.user.setActivity("no. | ?help | ?about | ?invite", {type: "WATCHING"});
+  }); 
+} else {
+  client.on("ready", async () => { 
+    console.log(`bot is inactive.`); client.user.setActivity("currently under maintenance. | ?help | ?about | ?invite", {type: "PLAYING"});
+  }); 
+}
+
 
 client.login(process.env.token) 
 
@@ -40,3 +53,4 @@ client.on('message', async message => {
       console.log(err)
     }
 });
+console.log('Active.')

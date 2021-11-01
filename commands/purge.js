@@ -7,6 +7,7 @@ exports.run = async(Discord, client, message, args) => {
       message.reply("Bulk deleted messages. (Please note, messages sent in this channel that lasted longer than 14 days cannot be deleted. This command is still experimental, so it is currently being worked on, please excuse the bugs.)")
       setTimeout(function(){message.channel.bulkDelete(2)},2000)
   } else {
-      message.channel.send('Sorry, this command is unavailable to you, due to lack of permissions.')
+      message.channel.send("When you realize you don't have permission to use this command...")
+      
   }
 }

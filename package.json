@@ -8,8 +8,9 @@
     "node": "16.6.0"
   },
   "dependencies": {
-    "discord.js": "^13.1.0",
+    "discord.js": "^13.3.0",
     "express": "^4.17.1",
-    "fs": "^0.0.2"
-  }
+    "crypto-js": "^4.1.1"
+  },
+  "license": "Apache-2.0"
 }

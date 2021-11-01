@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <title>Message Encryptor</title>
+  <link
+    rel="stylesheet"
+    href="https://www.pixeldrive.xyz/backend/style/fonts/open-sans.css"
+  />
+  <style>
+    html, body {
+      overflow: hidden;
+    }
+    @keyframes notification {
+      0% {
+        left: 110%;
+      }
+      10% {
+        left: 90%;
+      }
+      90% {
+        left: 90%;
+      }
+      100% {
+        left: 110%;
+      }
+    }
+    @keyframes notification1 {
+      0% {
+        left: 110%;
+      }
+      25% {
+        left: 90%;
+      }
+      75% {
+        left: 90%;
+      }
+      100% {
+        left: 110%;
+      }
+    }
+    #textarea {
+      width: 100%;
+      height: 25%;
+      position: absolute;
+      outline-style: auto;
+      transition: 0.5s;
+    }
+    #encrypt {
+      position: absolute;
+      top: 55%;
+      left: 2%;
+    }
+    #decrypt {
+      position: absolute;
+      top: 55%;
+      left: 7%;
+    }
+    #notification {
+      position: absolute;
+      top: 10%;
+      left: 110%;
+      transform: translate(-50%, -50%);
+      width: 15%;
+      height: 10%;
+      background-color: white;
+      box-shadow: 0px 0px 10px black;
+      border-radius: 5em;
+      transition: 0.5s;
+    }
+    .open-notification {
+      animation-name: notification;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+    }
+    .error {
+      animation-name: notification1;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+    }
+    #image {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      transform: translate(-50%,-50%);
+      top: 50%;
+      left: 82.5%;
+    }
+    #text {
+      top: 25%;
+      left: 50%;
+      position: absolute;
+      transform: translate(-50%,-50%);
+      font-family: "Open Sans", sans-serif;
+    }
+    #copy {
+      position: absolute;
+      top: 55%;
+      left: 12%;
+    }
+  </style>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+  </head>
+  <h1 style="font-family: 'Open Sans', sans-serif;">
+    PixelByteDrive Encryption
+  </h1>
+  <p style="font-family: 'Open Sans', sans-serif;">
+    Powered by crypto.js
+  </p>
+      <input id="textarea" required>
+      <button id="encrypt" onclick="encrypt()">
+        Encrypt
+      </button>
+      <button id="decrypt" onclick="decrypt()">
+        Decrypt
+      </button>
+      <button id="copy" onclick="copy()">
+        Copy  
+      </button>
+  <div id="notification" class="">
+    <p id="text">
+      Copied to clipboard.
+    </p>
+    <img id="image" src="https://cdn.glitch.me/c5a2c49e-e6a6-462b-bc27-6589c7056565%2F9f073041-f971-4f67-91f7-6e1d195f4863.image.png?v=1634133327442">
+  </div>
+  <script>
+    var text = document.getElementById('textarea');
+    function copy() {
+      if(text.value == "") {
+        document.getElementById('image').src = "https://cdn.glitch.me/c5a2c49e-e6a6-462b-bc27-6589c7056565%2Fc40fc78e-4d5c-4754-9d15-22b40037ae67.image.png?v=1634219393855";
+        document.getElementById('text').innerHTML = "Copied nothing.";
+        document.getElementById('notification').classList.add('open-notification');
+        setTimeout(function(){document.getElementById('notification').classList.remove('open-notification');},5000)
+        } else {
+            navigator.clipboard.writeText(text.value).then(function() {
+            console.log('Async: Copying to clipboard was successful!');
+              document.getElementById('image').src = "https://cdn.glitch.me/c5a2c49e-e6a6-462b-bc27-6589c7056565%2F9f073041-f971-4f67-91f7-6e1d195f4863.image.png?v=1634133327442";
+            document.getElementById('text').innerHTML = "Copied to clipboard.";
+            document.getElementById('notification').classList.add('open-notification');
+            setTimeout(function(){document.getElementById('notification').classList.remove('open-notification');},5000)
+          }, function(err) {
+        });
+      }
+    }
+    document.addEventListener('keydown', logKey);
+    function logKey(e) {  
+      setTimeout(function(){
+        if (text.value === "") {
+          document.getElementById('encrypt').disabled = true;
+          document.getElementById('decrypt').disabled = true;
+        } else {
+           document.getElementById('encrypt').disabled = false;
+           document.getElementById('decrypt').disabled = false;
+        }
+      })
+    }
+    if (text.value == "") {
+      document.getElementById('encrypt').disabled = true;
+      document.getElementById('decrypt').disabled = true;
+    } else {
+      document.getElementById('encrypt').disabled = false;
+      document.getElementById('decrypt').disabled = false;
+    }
+    var CryptoJS = require("crypto-js");
+    function encrypt() {
+      if (text.value === "") {
+        document.getElementById('encrypt').disabled = true;
+        document.getElementById('decrypt').disabled = true;
+        return
+      } else {
+        document.getElementById('encrypt').disabled = false;
+        document.getElementById('decrypt').disabled = false;
+      }
+      var encrypted = CryptoJS.AES.encrypt(document.getElementById('textarea').value, "Secret Passphrase");
+      document.getElementById('textarea').value = encrypted;
+      if (text.value === "") {
+        document.getElementById('encrypt').disabled = true;
+        document.getElementById('decrypt').disabled = true;
+        return
+      } else {
+        document.getElementById('encrypt').disabled = false;
+        document.getElementById('decrypt').disabled = false;
+      }
+    }
+    function decrypt() {
+      if (text.value === "") {
+        document.getElementById('encrypt').disabled = true;
+        document.getElementById('decrypt').disabled = true;
+        return
+      } else {
+        document.getElementById('encrypt').disabled = false;
+        document.getElementById('decrypt').disabled = false;
+      }
+        var decrypted = CryptoJS.AES.decrypt(document.getElementById('textarea').value, "Secret Passphrase");
+        if (decrypted == "") {
+          document.getElementById('textarea').style.backgroundColor = "#ffebeb"
+            document.getElementById('image').src = "https://cdn.glitch.me/c5a2c49e-e6a6-462b-bc27-6589c7056565%2Fc40fc78e-4d5c-4754-9d15-22b40037ae67.image.png?v=1634219393855";
+            document.getElementById('text').innerHTML = "No text to decrypt.";
+            document.getElementById('notification').classList.add('error');
+            setTimeout(function(){document.getElementById('notification').classList.remove('error');},2000)
+          setTimeout(function(){document.getElementById('textarea').style.backgroundColor = "white"},1000)
+        } else {
+          document.getElementById('textarea').value = decrypted.toString(CryptoJS.enc.Utf8);
+        }
+      if (text.value === "") {
+        document.getElementById('encrypt').disabled = true;
+        document.getElementById('decrypt').disabled = true;
+        return
+      } else {
+        document.getElementById('encrypt').disabled = false;
+        document.getElementById('decrypt').disabled = false;
+      }
+    }
+  </script>
+</html>
