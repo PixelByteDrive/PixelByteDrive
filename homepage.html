@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="manifest" href="manifest.json">
-  <meta name="description" content="PixelByteDrive is a community of various features.">
   <link
     rel="stylesheet"
-    href="https://www.pixeldrive.xyz/backend/style/sheets/main.css"
+    href="backend/style/sheets/main.css"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta
+    name="description"
+    content="PixelByteDrive is a community of various features."
   />
   <head>
-    <link rel="icon" type="image/png" href="https://cdn.glitch.com/c5a2c49e-e6a6-462b-bc27-6589c7056565%2Fpixel.png?v=1632321642330"/>
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://cdn.glitch.com/c5a2c49e-e6a6-462b-bc27-6589c7056565%2Fpixel.png?v=1632321642330"
+    />
   </head>
-  <meta id="theme" name="theme-color" content="#222222" />
+  <meta id="theme" name="theme-color" content="#000000" />
   <title>PixelByteDrive</title>
   <body id="background">
     <noscript
@@ -21,20 +28,18 @@
         style="display:none;visibility:hidden"
       ></iframe
     ></noscript>
-    <style>
-      img.headinglogo {
-        vertical-align: middle;
-      }
-    </style>
+    <p id="notif" style="text-align: center;">
+      We've cleaned up a bit! To open the directory, press the logo.
+    </p>
     <div id="heading">
       <h1>
-        <a href="/">
-          <img
-            class="headinglogo"
-            src="https://cdn.glitch.com/c5a2c49e-e6a6-462b-bc27-6589c7056565%2Fb97ef5e2-d175-4e6c-a75a-03af99472ae3.image.png?v=1629290864437"
-            id="logo"
-            alt="P"/></a
-        >ixelByteDrive
+        <img
+          class="headinglogo"
+          src="https://cdn.glitch.com/c5a2c49e-e6a6-462b-bc27-6589c7056565%2Fb97ef5e2-d175-4e6c-a75a-03af99472ae3.image.png?v=1629290864437"
+          id="logo"
+          alt="P"
+        />
+        ixelByteDrive
       </h1>
     </div>
     <div id="sidebar">
@@ -63,46 +68,43 @@
         Andrew
       </button>
       <button
-        onclick="warningdeveloper()"
+        onclick="document.location='backend/auth.html'"
         title="Developer Portal"
       >
         DevPortal
       </button>
       <button
-        onclick="document.location='https://www.pixeldrive.xyz/backend/padletlinks.html'"
+        onclick="document.location='backend/padletlinks.html'"
         title="Padlet"
       >
         Padlet
       </button>
       <button
-        onclick="warning()"
+        onclick="document.location='backend/studioclub.html'"
         title="Studio Club (Roblox)"
       >
         Studio Club (Roblox)
       </button>
       <button
-        onclick="warning2()"
+        onclick="document.location='https://scratch.mit.edu/users/Guest1046'"
         title="Guest1046 (Scratch)"
       >
         Guest1046 (Scratch)
       </button>
-      <button
-        onclick="document.location=''"
-        title="FunBot (Discord)"
-      >
+      <button title="FunBot (Discord)" disabled>
         FunBot (Discord)
       </button>
-      <hr/>
+      <hr />
       <h2><a href="old/">Old Website</a></h2>
-      <hr/>
+      <hr />
       <h2>
         <a href="legal/privacypolicy.html">Privacy Policy</a> •
         <a href="legal/license.md">License</a> •
-        <a href="mailto:killianus2008@pixeldrive.xyz">Email me</a>
+        <a href="mailto:hello@pixeldrive.xyz">Contact Us</a>
       </h2>
     </div>
-    <!-- end of sidebar -->  
-</body>
+    <!-- end of sidebar -->
+  </body>
   <div id="maintext">
     <h1>
       Homepage
@@ -117,14 +119,11 @@
       <a href="/andrew.html">Andrew</a> (who is very, <i>very,</i> cool.) [/j
       /nsrs]
     </p>
-    <i><strike>Killian</strike> <strike>Andrew</strike> Killian did most of the work.</i>
-    <div class="w3-card-4" style="background-color: #ffffff;">
-      <h1 style="color: #969696"></h1>
-    </div>
+    <i
+      ><strike>Killian</strike> <strike>Andrew</strike> Killian did most of the
+      work.</i
+    >
   </div>
-  <script>
-    var theme = document.getElementById('theme')
-    theme.content = "#000000"
-    setTimeout(function(){theme.content = "#222222"},4300)
-  </script>
+  <script src="PWA.js" defer></script>
+  <script src="backend/scripts/homepage.js"></script>
 </html>

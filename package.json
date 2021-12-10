@@ -1,16 +1,17 @@
 {
-  "name": "defresh",
+  "name": "PixelByteDrive",
   "main": "server.js",
+  "homepage": "https://www.pixeldrive.xyz/",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js & node bot.js"
   },
   "engines": {
     "node": "16.6.0"
   },
   "dependencies": {
-    "discord.js": "^13.3.0",
     "express": "^4.17.1",
-    "crypto-js": "^4.1.1"
+    "crypto-js": "^4.1.1",
+    "discord.js": "^13.3.1"
   },
   "license": "Apache-2.0"
 }

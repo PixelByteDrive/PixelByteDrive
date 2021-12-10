@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <div> 
-    <img class="animationdiv" src="https://cdn.glitch.com/6a3c2156-cafb-4954-b2d1-547a4cbd1b97%2Fpixel.png?v=1614362359638" style="width:150px;height:150px;">
+  <div>
+    <img
+      class="animationdiv"
+      src="https://cdn.glitch.com/6a3c2156-cafb-4954-b2d1-547a4cbd1b97%2Fpixel.png?v=1614362359638"
+      style="width:150px;height:150px;"
+    />
   </div>
   <head>
     <title>Authentication Required</title>
@@ -16,38 +20,58 @@
     />
     <link
       rel="stylesheet"
-      href="https://www.pixeldrive.xyz/backend/style/fonts/ubuntu.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://www.pixeldrive.xyz/backend/style/fonts/open-sans.css"
-    />
-    <link
-      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
     <script src="//code.jquery.com/jquery-1.12.4.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700;800&family=Ubuntu:wght@700&display=swap");
       @keyframes check {
-        0% {width: 50px; height: 50px; opacity: 0;}
-        25% {width: 150px; height: 150px; opacity: 1;}
-        75% {width: 150px; height: 150px; opacity: 1;}
-        100% {width: 50px; height: 50px; opacity: 0;}
+        0% {
+          width: 50px;
+          height: 50px;
+          opacity: 0;
+        }
+        25% {
+          width: 150px;
+          height: 150px;
+          opacity: 1;
+        }
+        75% {
+          width: 150px;
+          height: 150px;
+          opacity: 1;
+        }
+        100% {
+          width: 50px;
+          height: 50px;
+          opacity: 0;
+        }
+      }
+      @keyframes thing {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
       }
       .animationdiv {
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      position: fixed;
-      text-align: center;
-      border-radius: 100%;
-      background-color: #000000;
-      font-family: "Roboto", sans-serif;
-      animation-duration: 1s;
-      animation-iteration-count: 1;
-      z-index: 3;
-      opacity: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: fixed;
+        text-align: center;
+        border-radius: 100%;
+        font-family: "Roboto", sans-serif;
+        animation-name: thing;
+        animation-duration: 0.5s;
+        animation-iteration-count: 1;
+        z-index: 3;
+        opacity: 0;
       }
       #frame {
         max-width: 400px;
@@ -118,7 +142,7 @@
         cursor: pointer;
         display: inline-block;
         position: relative;
-        transition: 0.5s;
+        transition: 0.25s;
         text-align: center;
       }
       .button span:after {
@@ -129,7 +153,6 @@
         top: 0;
         right: 0px;
       }
-
       .button:hover span {
         padding-right: 10px;
       }
@@ -153,8 +176,6 @@
       }
       .back:hover {
         border-radius: 100%;
-      }
-      #password {
       }
       iframe {
         width: 0;
@@ -204,38 +225,32 @@
             class="button"
             style="vertical-align:middle"
           >
-            <span> Login</span>
+            <span>Login</span>
           </button>
           <br />
         </div>
       </div>
     </div>
-    <div id="lighthouse"></div>
   </body>
   <footer>
-    <iframe
-      id="identification"
-      src="https://www.pixeldrive.xyz/developer/report.html"
-    >
-    </iframe>
     <script>
       var submit = document.getElementById("submit");
       var password = document.getElementById("password");
       var textelement = document.getElementById("textelement");
       var confirm = "admin";
-      var newcontent = ""
       submit.onclick = function() {
         if (password.value == confirm) {
           textelement.style.color = "#009933";
           textelement.innerHTML = "Access Granted";
           document.cookie = "unlocked=yes";
           setTimeout(function() {
-              setTimeout(function() {
-                $(".br").remove();
-              }, 450);
+            setTimeout(function() {
+              $(".br").remove();
+            }, 450);
             $("#frame").toggle("scale");
             $("#identification").show("slow");
-            document.getElementById('animationdiv').style.animation = 'check 2s 1'
+            document.getElementById("animationdiv").style.animation =
+              "check 2s 1";
           }, 1000);
         } else {
           $("#password").effect("shake");
@@ -255,7 +270,8 @@
               }, 450);
               $("#frame").toggle("scale");
               $("#identification").show("slow");
-              document.getElementById('animationdiv').style.animation.name = 'check'
+              document.getElementById("animationdiv").style.animation.name =
+                "check";
             }, 1000);
           } else {
             textelement.innerHTML = "Access Denied";

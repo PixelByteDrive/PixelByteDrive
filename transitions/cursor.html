@@ -87,6 +87,7 @@
     }
   </style>
   <script>
+    var toggle = false;
     document.onmousemove = function(e) {
       var x = e.clientX;
       var y = e.clientY;
@@ -98,6 +99,19 @@
     };
     document.onmouseup = function() {
       document.getElementById("arrow").className = "arrow";
+     if(toggle == false) {
+      toggle = true
+      document.getElementById('infopane').style.width = "150px";
+      document.getElementById('infopane').style.height = "175px";
+      document.getElementById('infopane').style.top = "5%";
+      document.getElementById('infopane').style.opacity = "1";
+     } else {
+      toggle = false
+      document.getElementById('infopane').style.width = "0px";
+      document.getElementById('infopane').style.height = "0px";
+      document.getElementById('infopane').style.top = "1%";
+      document.getElementById('infopane').style.opacity = "0";
+     }
     };
   </script>
   <div id="cursor" class="link">
@@ -108,5 +122,24 @@
       class="arrow"
       src="https://cdn.glitch.com/c5a2c49e-e6a6-462b-bc27-6589c7056565%2Farrow_forward_white_24dp.svg?v=1631901655671"
     />
+  </div>
+  <style>
+    #infopane {
+      opacity: 0;
+      width: 0px;
+      height: 0px;
+      transition: 0.25s;
+      position: absolute;
+      top: 1%;
+      background-color: black;
+      border-radius: 1em;
+      color: white;
+      padding: 0.5em;
+      overflow: hidden;
+      font-size: 16pt;
+    }
+  </style>
+  <div id="infopane">
+    Inspired by Jazware's amazing style (no longer available today but still on the Wayback Machine).
   </div>
 </html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html id="background">
+  <style>
+    #background {
+      background-color: #dcdcdc;
+      transition: 1s;
+      transition-timing-function: cubic-bezier(.5,0,.5,1);
+    }
+    #toggle {
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      overflow: hidden;
+      transition: 1s;
+      transition-timing-function: cubic-bezier(.5,0,.5,1);
+    }
+    #side1 {
+      background-color: #dcdcdc;
+      width: 0%;
+      height: 0%;
+      position: absolute;
+      transform: translate(-100%,-50%);
+      top: 50%;
+      left: 50%;
+      transition: 1s;
+      border-top-left-radius: 100em;
+      border-bottom-left-radius: 100em;
+    }
+    #side2 {
+      background-color: #323232;
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      transform: translate(-0%,-50%);
+      top: 50%;
+      left: 50%;
+      transition: 1s;
+      border-top-right-radius: 100em;
+      border-bottom-right-radius: 100em;
+    }
+  </style>
+  <div id="toggle">
+    <div id="side1"></div>
+    <div id="side2"></div>
+  </div>
+  <script>
+    var darkmode = false;
+    document.getElementById("toggle").onclick = function() {
+     if(darkmode == false) {
+      darkmode = true
+      document.getElementById("toggle").style.transform = "translate(-50%,-50%) rotate(180deg)"
+      document.getElementById("background").style.backgroundColor = "#323232";
+      document.getElementById("side1").style.width = "50%";
+      document.getElementById("side1").style.height = "100%";
+      document.getElementById("side2").style.width = "0";
+      document.getElementById("side2").style.height = "0";
+     } else {
+      darkmode = false
+      document.getElementById("toggle").style.transform = "translate(-50%,-50%) rotate(0deg)";
+      document.getElementById("background").style.backgroundColor = "#dcdcdc";
+      document.getElementById("side1").style.width = "0";
+      document.getElementById("side1").style.height = "0";
+      document.getElementById("side2").style.width = "50%";
+      document.getElementById("side2").style.height = "100%";
+     }
+    }
+  </script>
+</html>

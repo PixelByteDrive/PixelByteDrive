@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    html, body {
+      overflow: hidden;
+    }
+    @font-face {
+      font-family: "Gotham";
+      src: url("https://cdn.glitch.me/c5a2c49e-e6a6-462b-bc27-6589c7056565%2FGothamSSm-Book.otf?v=1636762260891");
+    }
+    #userinfo {
+      position: absolute;
+      left: 80%;
+      top: 5%;
+      width: 25%;
+    }
+    #username {
+      width: 50%;
+      height: 100%;
+      font-family: "Gotham";
+      text-align: right;
+      top: 50%;
+      left: 80%;
+    }
+    #picture {
+      background-color: grey;
+      width: 75px;
+      height: 75px;
+      border-radius: 100%;
+      left: 62.5%;
+      top: 50%;
+      position: absolute;
+      object-fit: contain;
+      transform: translate(-50%,-50%);
+    }
+    #switcher {
+      width: 25%;
+      height: 10%;
+      position: absolute;
+      transform: translate(-50%,-50%);
+      background-color: gray;
+      top: 10%;
+      left: 50%;
+      border-radius: 100em;
+      overflow: hidden;
+    }
+    #shopbutton {
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      transform: translate(-50%,-50%);
+      background-color: black;
+      top: 50%;
+      left: 25%;
+      color: white;
+      border-radius: 100em;
+      border: none;
+      font-size: 24pt;
+      font-family: "Gotham", sans-serif;
+    }
+    #cartbutton {
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      transform: translate(-50%,-50%);
+      background-color: gray;
+      top: 50%;
+      left: 75%;
+      color: white;
+      border-radius: 100em;
+      border: none;
+      font-size: 24pt;
+      font-family: "Gotham", sans-serif;
+    }
+  </style>
+  <div id="userinfo">
+    <h1 id="username">
+      Sign in
+    </h1>
+    <img id="picture" src="https://www.roblox.com/bust-thumbnail/image?userId=48103520&width=420&height=420&format=png">
+  </div>
+  <div id="switcher">
+    <button id="shopbutton">Shop</button>
+    <button id="cartbutton">Cart</button>
+  </div>
+</html>

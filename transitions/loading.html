@@ -1,100 +1,64 @@
 <!DOCTYPE html>
 <html>
   <style>
-    @keyframes connecting1 {
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');
+    @keyframes loader {
       0% {
-        width: 250px;
-        height: 250px;
+        height: 50%;
+        width: 0%;
+        opacity: 1;
       }
-      60% {
-        width: 100px;
-        height: 100px;
+      75% {
+        opacity: 1;
       }
       100% {
-        width: 250px;
-        height: 250px;
+        height: 50%;
+        width: 100%;
+        opacity: 0;
       }
     }
-    @keyframes connecting2 {
-      0% {
-        width: 200px;
-        height: 200px;
-      }
-      50% {
-        width: 100px;
-        height: 100px;
-      }
-      100% {
-        width: 200px;
-        height: 200px;
-      }
-    }
-    @keyframes inner {
-      0% {
-        width: 150px;
-        height: 150px;
-      }
-      50% {
-        width: 200px;
-        height: 200px;
-      }
-      100% {
-        width: 150px;
-        height: 150px;
-      }
-    }
-    html,
-    body {
-      background-color: black;
-    }
-    #outer {
-      position: absolute;
-      background-color: black;
-      width: 250px;
-      height: 250px;
-      transform: translate(-50%, -50%);
+    #loader {
       top: 50%;
       left: 50%;
-      border-radius: 250px;
-      border: 5px solid white;
-      animation-name: connecting1;
-      animation-duration: 3s;
-      animation-iteration-count: infinite;
-    }
-    #second {
       position: absolute;
-      background-color: black;
-      width: 200px;
-      height: 200px;
-      transform: translate(-50%, -50%);
-      top: 50%;
-      left: 50%;
-      border-radius: 250px;
-      border: 5px solid white;
-      animation-name: connecting2;
-      animation-duration: 3s;
-      animation-iteration-count: infinite;
-    }
-    #inner {
-      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform: translate(-50%,-50%);
       background-color: white;
-      width: 150px;
-      height: 150px;
-      transform: translate(-50%, -50%);
-      top: 50%;
-      left: 50%;
-      border-radius: 100%;
-      animation-name: inner;
-      animation-duration: 3s;
+      border-radius: 5em;
+      overflow: hidden;
+      animation-name: loader;
+      animation-duration: 0.5s;
       animation-iteration-count: infinite;
+      animation-timing-function: ease-out;
+    }
+    #loaderouter {
+      border-radius: 5em;
+      position: absolute;
+      background-color: black;
+      top: 75%;
+      left: 50%;
+      width: 50%;
+      height: 1%;
+      transform: translate(-50%,-50%);
+      overflow: hidden;
+    }
+    #loading {
+      position: absolute;
+      top: 70%;
+      left: 25%;
+      font-size: 12pt;
+      color: gray;
+      font-family: "Open Sans", sans-serif;
     }
   </style>
-  <div id="outer">
-    <div id="second">
-      <div id="inner"></div>
-    </div>
+  <h1 id="loading">
+    loading...
+  </h1>
+  <div id="loaderouter">
+    <div id='loader'></div>
   </div>
-  <style>
+    <style>
     #info {
       width: 25px;
       height: 25px;
@@ -108,9 +72,9 @@
       transition: 0.25s;
       position: absolute;
       top: 1%;
-      background-color: white;
+      background-color: black;
       border-radius: 1em;
-      color: black;
+      color: white;
       padding: 0.5em;
       overflow: hidden;
       font-size: 16pt;
@@ -118,7 +82,7 @@
   </style>
   <img src="https://cdn.glitch.me/c5a2c49e-e6a6-462b-bc27-6589c7056565%2Finfo_black_24dp.svg?v=1635794065584" id="info">
   <div id="infopane">
-    Inspired by Skype. Was going to use it for a joke with some friends.
+    Not exactly inspired off anything, but is based on TikTok loading animation.
   </div>
   <script>
     var toggle = false;

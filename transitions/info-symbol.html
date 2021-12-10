@@ -1,42 +1,9 @@
 <!DOCTYPE html>
 <html>
   <style>
-    html, body {
-      background-color: #000000;
-    }
-    @keyframes wavehi {
-      0% {
-        transform: rotate(-45deg) translate(0%,-100%);
-      }
-      50% {
-        transform: rotate(45deg) translate(0%,-100%);
-      }
-      100% {
-        transform: rotate(-45deg) translate(0%,-100%);
-      }
-    }
-    p {
-      color: white;
-      text-align: center;
-    }
-   #img {
-      position: absolute;
-      transform: translate(-50%,-50%);
-      top: 50%;
-      left: 50%;
-      animation-name: wavehi;
-      animation-duration: 2s;
-      animation-iteration-count: infinite;
-    } 
-  </style>
-  <title>hi</title>
- <img id="img" src="https://cdn.discordapp.com/attachments/872618598907125831/897552934085197834/unknown.png">
-    <style>
     #info {
       width: 25px;
       height: 25px;
-      background-color: white;
-      border-radius: 100%;
     }
     #infopane {
       opacity: 0;
@@ -45,9 +12,9 @@
       transition: 0.25s;
       position: absolute;
       top: 1%;
-      background-color: white;
+      background-color: black;
       border-radius: 1em;
-      color: black;
+      color: white;
       padding: 0.5em;
       overflow: hidden;
       font-size: 16pt;
@@ -55,7 +22,7 @@
   </style>
   <img src="https://cdn.glitch.me/c5a2c49e-e6a6-462b-bc27-6589c7056565%2Finfo_black_24dp.svg?v=1635794065584" id="info">
   <div id="infopane">
-    Was originally to say hi to my friends using HTML5 technology.
+    Inspired by (inspiration credibility)
   </div>
   <script>
     var toggle = false;
@@ -63,7 +30,7 @@
      if(toggle == false) {
       toggle = true
       document.getElementById('infopane').style.width = "150px";
-      document.getElementById('infopane').style.height = "150px";
+      document.getElementById('infopane').style.height = "75px";
       document.getElementById('infopane').style.top = "5%";
       document.getElementById('infopane').style.opacity = "1";
      } else {
@@ -78,7 +45,7 @@
      if(toggle == false) {
       toggle = true
       document.getElementById('infopane').style.width = "150px";
-      document.getElementById('infopane').style.height = "150px";
+      document.getElementById('infopane').style.height = "75px";
       document.getElementById('infopane').style.top = "5%";
       document.getElementById('infopane').style.opacity = "1";
      } else {
@@ -90,4 +57,5 @@
      }
     });
   </script>
+  <link rel="manifest" href="/manifest.json">
 </html>

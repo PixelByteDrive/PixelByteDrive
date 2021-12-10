@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    @keyframes dialogquestion {
+      0% {
+        opacity: 0;
+        left: 30%;
+      }
+      100% {
+        opacity: 1;
+        left: 15%;
+      }
+    }
+    @keyframes dialogresult {
+      0% {
+        opacity: 0;
+        left: 55%;
+      }
+      100% {
+        opacity: 1;
+        left: 37.5%;
+      }
+    }
+    @keyframes dialogimage {
+      0% {
+        height: 0%;
+        width: 0%;
+      }
+      10% {
+        opacity: 0;
+      }
+      100% {
+        height: 100%;
+        width: 10%;
+      }
+    }
+    @keyframes dialogoptions {
+      0% {
+        height: 0%;
+        width: 0%;
+        opacity: 0;
+      }
+      20% {
+        opacity: 0;
+      }
+      100% {
+        width: 7.5%;
+        height: 62.5%;
+        opacity: 1;
+      }
+    }
+    html, body {
+      background-color: grey;
+    }
+    #dialog {
+      border-radius: 2px;
+      width: 50%;
+      height: 5%;
+      position: absolute;
+      transform: translate(-50%,-50%);
+      top: 50%;
+      left: 50%;
+      background-color: #f8ecac;
+      overflow: hidden;
+      box-shadow: 0px 2px 0px #aca484;
+    }
+    #dialogimage {
+      width: 10%;
+      height: 100%;
+      object-fit: contain;
+      top: 50%;
+      left: 3%;
+      position: fixed;
+      transform: translate(-50%,-50%);
+      animation-name: dialogimage;
+      animation-duration: 1s;
+      animation-timing-function: cubic-bezier(.5,1.5,.5,1);
+    }
+    #dialogquestion {
+      top: 0%;
+      left: 15%;
+      position: absolute;
+      transform: translate(-50%,-50%);
+      animation-name: dialogquestion;
+      animation-duration: 2s;
+    }
+    #dialogresult {
+      top: 0%;
+      left: 37.5%;
+      position: absolute;
+      transform: translate(-50%,-50%);
+      animation-name: dialogresult;
+      animation-duration: 2.25s;
+    }
+    #dialogoption1 {
+      top: 50%;
+      left: 80%;
+      position: absolute;
+      transform: translate(-50%,-50%);
+      width: 7.5%;
+      height: 62.5%;
+      text-align: center;
+      animation-timing-function: cubic-bezier(.5,1.5,.5,1);
+      animation-name: dialogoptions;
+      animation-duration: 1s;
+      overflow: hidden;
+    }
+    #dialogoption2 {
+      top: 50%;
+      left: 90%;
+      position: absolute;
+      transform: translate(-50%,-50%);
+      width: 7.5%;
+      height: 62.5%;
+      text-align: center;
+      animation-timing-function: cubic-bezier(.5,1.5,.5,1);
+      animation-name: dialogoptions;
+      animation-duration: 1s;
+      overflow: hidden;
+    }
+  </style>
+  <div id="dialog">
+    <img id="dialogimage" src="https://cdn.glitch.me/c5a2c49e-e6a6-462b-bc27-6589c7056565%2Fhelp_outline_black_24dp.svg?v=1637607983078">
+    <p id="dialogquestion">
+      Are you sure?
+    </p>
+    <p id="dialogresult">
+      You will return to the main menu
+    </p>
+    <button id="dialogoption1">
+      Yes
+    </button>
+    <button id="dialogoption2">
+      No
+    </button>
+  </div>
+</html>

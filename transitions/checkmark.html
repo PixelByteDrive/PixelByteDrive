@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    @keyframes check {
+      0% {
+        top: 75%;
+        width: 100px;
+        height: 100px;
+        opacity: 0;
+      }
+      50% {
+        top: 50%;
+        opacity: 1;
+      }
+      100% {
+        width: 250px;
+        height: 250px;
+        top: 50%;
+      }
+    }
+    html,
+    body {
+      background-color: #000000;
+      overflow: hidden;
+    }
+    #circle {
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      background-color: white;
+      width: 250px;
+      height: 250px;
+      transform: translate(-50%, -50%);
+      border-radius: 100%;
+      overflow: hidden;
+    }
+    #check {
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      transform: translate(-50%, -50%);
+      border-radius: 100%;
+      animation-name: check;
+      animation-duration: 1s;
+      opacity: 1;
+    }
+  </style>
+  <div id="circle">
+    <img
+      id="check"
+      src="https://cdn.glitch.me/c5a2c49e-e6a6-462b-bc27-6589c7056565%2Fdone_black_48dp.svg?v=1636429221941"
+    />
+  </div>
+  <script>
+    var audio = new Audio(
+      "https://cdn.glitch.me/c5a2c49e-e6a6-462b-bc27-6589c7056565%2FMoving%20File.mp3?v=1636429800586"
+    );
+    audio.play();
+  </script>
+</html>
