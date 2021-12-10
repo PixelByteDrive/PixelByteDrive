@@ -1,0 +1,17 @@
+# This contains all the configurations for the Porteus Kiosk
+connection=wired
+wired_authentication=eapol
+dhcp=yes
+browser=chrome
+# Chrome is not compatible with some of these features, such as the disable_address_bar=no and more.
+kiosk_config=https://www.pixeldrive.xyz/backend/management.txt
+additional_components=uefi.zip
+homepage=https://www.pixeldrive.xyz
+whitelist=https://www.pixeldrive.xyz
+whitelist=chrome://policy
+whitelist=chrome://settings
+wallpaper=https://wallpapercave.com/wp/wp2698095.jpg
+# hp default background
+allow_popup_windows=yes
+disable_address_bar=no
+screen_settings=VGA:1920x1080:60.00

@@ -1,0 +1,17 @@
+{
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "description": "PixelByteDrive is a community full of amazing and weird things.",
+  "display": "minimal-ui",
+  "icons": [
+    {
+      "src": "https://cdn.glitch.com/c5a2c49e-e6a6-462b-bc27-6589c7056565%2Fpixel.png?v=1632321642330",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "name": "PixelByteDrive",
+  "short_name": "Pixel",
+  "start_url": "/homepage.html",
+  "scope": "/"
+}

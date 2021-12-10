@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans&family=Ubuntu&display=swap");
+    #one {
+      transition: 0.5s;
+      position: absolute;
+      transform: translate(-0%, -50%);
+      background-color: black;
+      width: 50px;
+      height: 6px;
+      top: 25px;
+      left: 25px;
+      z-index: 2;
+      position: fixed;
+    }
+    #two {
+      transition: 0.5s;
+      position: absolute;
+      transform: translate(-0%, -50%);
+      background-color: black;
+      width: 50px;
+      height: 6px;
+      top: 35px;
+      left: 25px;
+      z-index: 2;
+      position: fixed;
+    }
+    #three {
+      transition: 0.5s;
+      position: absolute;
+      transform: translate(-0%, -50%);
+      background-color: black;
+      width: 50px;
+      height: 6px;
+      top: 45px;
+      left: 25px;
+      z-index: 2;
+      position: fixed;
+    }
+    #oneopen {
+      transition: 0.5s;
+      position: absolute;
+      transform: translate(-0%, -50%) rotate(0.125turn);
+      background-color: white;
+      width: 50px;
+      height: 6px;
+      top: 45px;
+      left: 25px;
+      z-index: 2;
+      position: fixed;
+    }
+    #twoopen {
+      transition: 0.25s;
+      position: absolute;
+      transform: translate(-0%, -50%);
+      background-color: white;
+      width: 0px;
+      height: 3px;
+      top: 45px;
+      left: 25px;
+      z-index: 2;
+      position: fixed;
+    }
+    #threeopen {
+      transition: 0.5s;
+      position: absolute;
+      transform: translate(-0%, -50%) rotate(-0.125turn);
+      background-color: white;
+      width: 50px;
+      height: 6px;
+      top: 45px;
+      left: 25px;
+      z-index: 2;
+      position: fixed;
+    }
+    #sidebar {
+      padding: 5em;
+      transition: 0.5s;
+      position: absolute;
+      width: 25%;
+      height: 100%;
+      top: 0%;
+      left: -50%;
+    }
+    #sidebaropen {
+      padding: 5em;
+      transition: 0.5s;
+      position: absolute;
+      width: 25%;
+      height: 100%;
+      top: 0%;
+      left: 0%;
+      background-color: #222222;
+    }
+button {
+  background-color: #bfbfbf;
+  width: 100%;
+  border: none;
+  float: center;
+  font-size: 24px;
+  font-family: 'Open Sans', sans-serif;
+  transition: 0.5s;
+  font-size-adjust: 0.75;
+  cursor: pointer;
+  border: 1px solid gray;
+  z-index: 1;
+}
+button:hover {
+  background-color: black;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+button:active {
+  background-color: black;
+  color: gray;
+  cursor: progress;
+}
+button:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+  cursor: progress;
+}
+  </style>
+  <div style="width: 50px; height: 50px; cursor: pointer;" id="clickable">
+    <div id="one" class="dash"><br></div>
+    <div id="two" class="dash"><br></div>
+    <div id="three" class="dash"><br></div>
+  </div>
+    <div id="sidebar" class="animate__animated animate__fadeInLeftBig">
+      <button
+        trans="document.location='https://www.pixeldrive.xyz/homepage.html'"
+        title="Home"
+      >
+        Home
+      </button>
+      <button
+        onclick="document.location='https://pixeldrive.padlet.org/andrewjchen/PixelByteNews'"
+        title="Updates"
+      >
+        Updates
+      </button>
+      <button
+        onclick="document.location='https://ijap.glitch.me/'"
+        title="Issac's Website"
+      >
+        Issac's Website
+      </button>
+      <button
+        onclick="document.location='https://www.pixeldrive.xyz/andrew.html'"
+        title="Andrew"
+      >
+        Andrew
+      </button>
+      <button
+        onclick="warningdeveloper()"
+        title="Developer Portal"
+      >
+        DevPortal
+      </button>
+      <button
+        onclick="document.location='https://www.pixeldrive.xyz/backend/padletlinks.html'"
+        title="Padlet"
+      >
+        Padlet
+      </button>
+      <button
+        onclick="warning()"
+        title="Studio Club (Roblox)"
+      >
+        Studio Club (Roblox)
+      </button>
+      <button
+        onclick="warning2()"
+        title="Guest1046 (Scratch)"
+      >
+        Guest1046 (Scratch)
+      </button>
+      <button
+        onclick="warning3()"
+        title="FunBot (Discord)"
+      >
+        FunBot (Discord)
+      </button>
+    </div>
+    <!-- end of sidebar -->
+  <script>
+    var clickable = document.getElementById('clickable')
+    var open = false
+    clickable.onclick = function(){
+      if (open == false) {
+        open = true
+        document.getElementById('one').id = "oneopen";
+        document.getElementById('two').id = "twoopen";
+        document.getElementById('three').id = "threeopen";
+        document.getElementById('sidebar').id = "sidebaropen";
+      } else {
+        open = false
+        document.getElementById('oneopen').id = "one";
+        document.getElementById('twoopen').id = "two";
+        document.getElementById('threeopen').id = "three";
+        document.getElementById('sidebaropen').id = "sidebar";
+      }
+    };
+  </script>
+    <style>
+    #info {
+      width: 25px;
+      height: 25px;
+      background-color: white;
+      border-radius: 100%;
+      z-index: 2;
+    }
+    #infopane {
+      opacity: 0;
+      width: 0px;
+      height: 0px;
+      transition: 0.25s;
+      position: absolute;
+      top: 5%;
+      background-color: black;
+      border-radius: 1em;
+      color: white;
+      padding: 0.5em;
+      overflow: hidden;
+      font-size: 16pt;
+    }
+  </style>
+  <img src="https://cdn.glitch.me/c5a2c49e-e6a6-462b-bc27-6589c7056565%2Finfo_black_24dp.svg?v=1635794065584" id="info">
+  <div id="infopane">
+    Inspired by Andrew J. Chen's (or some 3rd party supplier) navigator on <i>all</i> his pages.
+  </div>
+  <script>
+    var toggle = false;
+    document.getElementById('info').addEventListener('click', event => {
+     if(toggle == false) {
+      toggle = true
+      document.getElementById('infopane').style.width = "150px";
+      document.getElementById('infopane').style.height = "200px";
+      document.getElementById('infopane').style.top = "10%";
+      document.getElementById('infopane').style.opacity = "1";
+     } else {
+      toggle = false
+      document.getElementById('infopane').style.width = "0px";
+      document.getElementById('infopane').style.height = "0px";
+      document.getElementById('infopane').style.top = "5%";
+      document.getElementById('infopane').style.opacity = "0";
+     }
+    });
+    document.getElementById('infopane').addEventListener('click', event => {
+     if(toggle == false) {
+      toggle = true
+      document.getElementById('infopane').style.width = "150px";
+      document.getElementById('infopane').style.height = "200px";
+      document.getElementById('infopane').style.top = "10%";
+      document.getElementById('infopane').style.opacity = "1";
+     } else {
+      toggle = false
+      document.getElementById('infopane').style.width = "0px";
+      document.getElementById('infopane').style.height = "0px";
+      document.getElementById('infopane').style.top = "5%";
+      document.getElementById('infopane').style.opacity = "0";
+     }
+    });
+  </script>
+</html>

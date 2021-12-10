@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    @keyframes circle-open {
+      0% {
+        width: 0%;
+        height: 0%;
+      }
+      100% {
+        width: 250px;
+        height: 250px;
+      }
+    }
+    @keyframes point {
+      0% {
+        left: 125%;
+      }
+      25% {
+        left: 125%;
+      }
+      50% {
+        left: 75%;
+      }
+      100% {
+        left: 75%;
+      }
+    }
+    @keyframes scroll-up {
+      0% {
+        top: 200%;
+      }
+      25% {
+        top: 200%;
+      }
+      100% {
+        top: 75%;
+      }
+    }
+    html,
+    body {
+      background-color: black;
+    }
+    #circle {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      width: 250px;
+      height: 250px;
+      border-radius: 100%;
+      border: 10px solid #3f9cfd;
+      animation-name: circle-open;
+      animation-duration: 0.5s;
+      overflow: hidden;
+    }
+    #border {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      top: 75%;
+      left: 0%;
+      border: 10px solid #3d9cfb;
+      border-top-right-radius: 4em;
+      animation-name: scroll-up;
+      animation-duration: 1s;
+      transition: 0.5s;
+      animation-timing-function: cubic-bezier(0,1,.5,1);
+      background-color: #264360;
+    }
+    #top {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      width: 40%;
+      height: 5%;
+      top: 2.5%;
+      left: 50%;
+      border: 10px solid #3f9cfd;
+      border-bottom-right-radius: 1em;
+      border-bottom-left-radius: 1em;
+      background-color: #3f9cfd;
+    }
+    #side {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      width: 1%;
+      height: 35%;
+      top: 50%;
+      left: 107.5%;
+      border: 5px solid #3f9cfd;
+      border-bottom-right-radius: 1em;
+      border-top-right-radius: 1em;
+      background-color: #3f9cfd;
+    }
+    #arrow {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      width: 50px;
+      height: 50px;
+      top: 75%;
+      left: 75%;
+      border-bottom-right-radius: 1em;
+      border-top-right-radius: 1em;
+      color: #3f9cfd;
+      animation-name: point;
+      animation-duration: 2s;
+      animation-iteration-count: 1;
+      animation-timing-function: cubic-bezier(0,1,.5,1);
+    }
+  </style>
+  <div id="circle">
+    <div id="border">
+      <div id="top"></div>
+      <div id="side"></div>
+    </div>
+    <img
+       id="arrow"
+       src="https://cdn.glitch.com/c5a2c49e-e6a6-462b-bc27-6589c7056565%2Farrow_back_white_24dp.svg?v=1631901651475"
+    />
+  </div>
+    <style>
+    #info {
+      width: 25px;
+      height: 25px;
+      background-color: white;
+      border-radius: 100%;
+    }
+    #infopane {
+      opacity: 0;
+      width: 0px;
+      height: 0px;
+      transition: 0.25s;
+      position: absolute;
+      top: 1%;
+      background-color: white;
+      border-radius: 1em;
+      color: black;
+      padding: 0.5em;
+      overflow: hidden;
+      font-size: 16pt;
+    }
+  </style>
+  <img src="https://cdn.glitch.me/c5a2c49e-e6a6-462b-bc27-6589c7056565%2Finfo_black_24dp.svg?v=1635794065584" id="info">
+  <div id="infopane">
+    Inspired by Apple Pay
+  </div>
+  <script>
+    var toggle = false;
+    document.getElementById('info').addEventListener('click', event => {
+     if(toggle == false) {
+      toggle = true
+      document.getElementById('infopane').style.width = "150px";
+      document.getElementById('infopane').style.height = "75px";
+      document.getElementById('infopane').style.top = "5%";
+      document.getElementById('infopane').style.opacity = "1";
+     } else {
+      toggle = false
+      document.getElementById('infopane').style.width = "0px";
+      document.getElementById('infopane').style.height = "0px";
+      document.getElementById('infopane').style.top = "1%";
+      document.getElementById('infopane').style.opacity = "0";
+     }
+    });
+    document.getElementById('infopane').addEventListener('click', event => {
+     if(toggle == false) {
+      toggle = true
+      document.getElementById('infopane').style.width = "150px";
+      document.getElementById('infopane').style.height = "75px";
+      document.getElementById('infopane').style.top = "5%";
+      document.getElementById('infopane').style.opacity = "1";
+     } else {
+      toggle = false
+      document.getElementById('infopane').style.width = "0px";
+      document.getElementById('infopane').style.height = "0px";
+      document.getElementById('infopane').style.top = "1%";
+      document.getElementById('infopane').style.opacity = "0";
+     }
+    });
+  </script>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');
+    @keyframes loader {
+      0% {
+        height: 50%;
+        width: 0%;
+        opacity: 1;
+      }
+      75% {
+        opacity: 1;
+      }
+      100% {
+        height: 50%;
+        width: 100%;
+        opacity: 0;
+      }
+    }
+    #loader {
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform: translate(-50%,-50%);
+      background-color: white;
+      border-radius: 5em;
+      overflow: hidden;
+      animation-name: loader;
+      animation-duration: 0.5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-out;
+    }
+    #loaderouter {
+      border-radius: 5em;
+      position: absolute;
+      background-color: black;
+      top: 75%;
+      left: 50%;
+      width: 50%;
+      height: 1%;
+      transform: translate(-50%,-50%);
+      overflow: hidden;
+    }
+    #loading {
+      position: absolute;
+      top: 70%;
+      left: 25%;
+      font-size: 12pt;
+      color: gray;
+      font-family: "Open Sans", sans-serif;
+    }
+  </style>
+  <h1 id="loading">
+    loading...
+  </h1>
+  <div id="loaderouter">
+    <div id='loader'></div>
+  </div>
+    <style>
+    #info {
+      width: 25px;
+      height: 25px;
+      background-color: white;
+      border-radius: 100%;
+    }
+    #infopane {
+      opacity: 0;
+      width: 0px;
+      height: 0px;
+      transition: 0.25s;
+      position: absolute;
+      top: 1%;
+      background-color: black;
+      border-radius: 1em;
+      color: white;
+      padding: 0.5em;
+      overflow: hidden;
+      font-size: 16pt;
+    }
+  </style>
+  <img src="https://cdn.glitch.me/c5a2c49e-e6a6-462b-bc27-6589c7056565%2Finfo_black_24dp.svg?v=1635794065584" id="info">
+  <div id="infopane">
+    Not exactly inspired off anything, but is based on TikTok loading animation.
+  </div>
+  <script>
+    var toggle = false;
+    document.getElementById('info').addEventListener('click', event => {
+     if(toggle == false) {
+      toggle = true
+      document.getElementById('infopane').style.width = "150px";
+      document.getElementById('infopane').style.height = "150px";
+      document.getElementById('infopane').style.top = "5%";
+      document.getElementById('infopane').style.opacity = "1";
+     } else {
+      toggle = false
+      document.getElementById('infopane').style.width = "0px";
+      document.getElementById('infopane').style.height = "0px";
+      document.getElementById('infopane').style.top = "1%";
+      document.getElementById('infopane').style.opacity = "0";
+     }
+    });
+    document.getElementById('infopane').addEventListener('click', event => {
+     if(toggle == false) {
+      toggle = true
+      document.getElementById('infopane').style.width = "150px";
+      document.getElementById('infopane').style.height = "150px";
+      document.getElementById('infopane').style.top = "5%";
+      document.getElementById('infopane').style.opacity = "1";
+     } else {
+      toggle = false
+      document.getElementById('infopane').style.width = "0px";
+      document.getElementById('infopane').style.height = "0px";
+      document.getElementById('infopane').style.top = "1%";
+      document.getElementById('infopane').style.opacity = "0";
+     }
+    });
+  </script>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    #info {
+      width: 25px;
+      height: 25px;
+    }
+    #infopane {
+      opacity: 0;
+      width: 0px;
+      height: 0px;
+      transition: 0.25s;
+      position: absolute;
+      top: 1%;
+      background-color: black;
+      border-radius: 1em;
+      color: white;
+      padding: 0.5em;
+      overflow: hidden;
+      font-size: 16pt;
+    }
+  </style>
+  <img src="https://cdn.glitch.me/c5a2c49e-e6a6-462b-bc27-6589c7056565%2Finfo_black_24dp.svg?v=1635794065584" id="info">
+  <div id="infopane">
+    Inspired by (inspiration credibility)
+  </div>
+  <script>
+    var toggle = false;
+    document.getElementById('info').addEventListener('click', event => {
+     if(toggle == false) {
+      toggle = true
+      document.getElementById('infopane').style.width = "150px";
+      document.getElementById('infopane').style.height = "75px";
+      document.getElementById('infopane').style.top = "5%";
+      document.getElementById('infopane').style.opacity = "1";
+     } else {
+      toggle = false
+      document.getElementById('infopane').style.width = "0px";
+      document.getElementById('infopane').style.height = "0px";
+      document.getElementById('infopane').style.top = "1%";
+      document.getElementById('infopane').style.opacity = "0";
+     }
+    });
+    document.getElementById('infopane').addEventListener('click', event => {
+     if(toggle == false) {
+      toggle = true
+      document.getElementById('infopane').style.width = "150px";
+      document.getElementById('infopane').style.height = "75px";
+      document.getElementById('infopane').style.top = "5%";
+      document.getElementById('infopane').style.opacity = "1";
+     } else {
+      toggle = false
+      document.getElementById('infopane').style.width = "0px";
+      document.getElementById('infopane').style.height = "0px";
+      document.getElementById('infopane').style.top = "1%";
+      document.getElementById('infopane').style.opacity = "0";
+     }
+    });
+  </script>
+  <link rel="manifest" href="/manifest.json">
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    html,
+    body {
+      cursor: none;
+    }
+    @keyframes in {
+      0% {
+        top: 50%;
+        left: -50%;
+      }
+      100% {
+        top: 50%;
+        left: 50%;
+      }
+    }
+    @keyframes out {
+      0% {
+        top: 50%;
+        left: 50%;
+      }
+      100% {
+        top: 50%;
+        left: 150%;
+      }
+    }
+    #cursor {
+      background-color: #34a1eb;
+      position: absolute;
+      width: 35px;
+      height: 35px;
+      transform: translate(-50%, -50%);
+      border-radius: 100%;
+      transition: 0.1s;
+      box-shadow: 1px 1px 4px #888888;
+      overflow: hidden;
+      border-top-left-radius: 0;
+    }
+    #innercursor {
+      background-color: #8bc8f2;
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      transform: translate(-50%, -50%);
+      border-radius: 100%;
+      top: 50%;
+      left: 50%;
+      transition: 0.25s;
+      border-top-left-radius: 0;
+      animation-timing-function: ease-in;
+    }
+    #cursor:active {
+      width: 30px;
+      height: 30px;
+      border-top-left-radius: 100%;
+      background-color: #007de3;
+    }
+    #innercursor:active {
+      width: 0px;
+      height: 0px;
+      border-top-left-radius: 100%;
+    }
+    .arrow {
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      top: -50%;
+      left: 50%;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      animation-name: out;
+      animation-duration: 0.25s;
+      animation-timing-function: ease-in;
+    }
+    .openarrow {
+      z-index: 2;
+      top: 50%;
+      left: 50%;
+      animation-name: in;
+      animation-duration: 0.5s;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      animation-timing-function: ease;
+    }
+  </style>
+  <script>
+    var toggle = false;
+    document.onmousemove = function(e) {
+      var x = e.clientX;
+      var y = e.clientY;
+      document.getElementById("cursor").style.marginLeft = x + "px";
+      document.getElementById("cursor").style.marginTop = y + "px";
+    };
+    document.onmousedown = function() {
+      document.getElementById("arrow").className = "openarrow";
+    };
+    document.onmouseup = function() {
+      document.getElementById("arrow").className = "arrow";
+     if(toggle == false) {
+      toggle = true
+      document.getElementById('infopane').style.width = "150px";
+      document.getElementById('infopane').style.height = "175px";
+      document.getElementById('infopane').style.top = "5%";
+      document.getElementById('infopane').style.opacity = "1";
+     } else {
+      toggle = false
+      document.getElementById('infopane').style.width = "0px";
+      document.getElementById('infopane').style.height = "0px";
+      document.getElementById('infopane').style.top = "1%";
+      document.getElementById('infopane').style.opacity = "0";
+     }
+    };
+  </script>
+  <div id="cursor" class="link">
+    <div id="innercursor"></div>
+    <img
+      draggable="false"
+      id="arrow"
+      class="arrow"
+      src="https://cdn.glitch.com/c5a2c49e-e6a6-462b-bc27-6589c7056565%2Farrow_forward_white_24dp.svg?v=1631901655671"
+    />
+  </div>
+  <style>
+    #infopane {
+      opacity: 0;
+      width: 0px;
+      height: 0px;
+      transition: 0.25s;
+      position: absolute;
+      top: 1%;
+      background-color: black;
+      border-radius: 1em;
+      color: white;
+      padding: 0.5em;
+      overflow: hidden;
+      font-size: 16pt;
+    }
+  </style>
+  <div id="infopane">
+    Inspired by Jazware's amazing style (no longer available today but still on the Wayback Machine).
+  </div>
+</html>
