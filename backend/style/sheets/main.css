@@ -28,7 +28,7 @@ body {
   width: 0;
   height: 0;
   float: left;
-  padding: 1rem;
+  padding: 0;
   margin: 1rem;
   border-radius: 1em;
   background-color: #222222;
@@ -53,6 +53,7 @@ body {
   transition: 1s;
 }
 button {
+  overflow: hidden;
   background-color: #bfbfbf;
   width: 100%;
   float: center;
