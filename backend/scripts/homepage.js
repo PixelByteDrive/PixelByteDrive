@@ -6,6 +6,7 @@ document.getElementById("logo").addEventListener("click", function() {
     document.getElementById("maintext").style.width = "90%";
     document.getElementById("sidebar").style.height = "25%";
     document.getElementById("sidebar").style.opacity = "1";
+    document.getElementById("sidebar").style.padding = "1rem";
     document.getElementById("sidebar").style.visibility = "visible";
     document.getElementById("logo").style.transform = "rotateY(360deg)";
   } else {
@@ -15,6 +16,7 @@ document.getElementById("logo").addEventListener("click", function() {
     document.getElementById("sidebar").style.height = "0";
     document.getElementById("sidebar").style.opacity = "0";
     document.getElementById("sidebar").style.visibility = "hidden";
+    document.getElementById("sidebar").style.padding = "0";
     document.getElementById("logo").style.transform = "rotateY(0deg)";
   }
 });
