@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <script src="../webhook.js"></script>
+    <h1>
+      Title
+    </h1>
+    <input id="title" type="text">
+    <br>
+    <h1>
+      Message
+    </h1>
+    <textarea id="message"></textarea>
+    <br>
+    <button id="send">
+      Send
+    </button>
+  <script>
+    document.getElementById('send').onclick = function(){
+      var title = document.getElementById('title').innerHTML
+      var message = document.getElementById('message').innerHTML
+      createWebhook(title, message)
+    }
+  </script>
+</html>

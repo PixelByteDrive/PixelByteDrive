@@ -2,6 +2,10 @@
 <html lang="en">
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans&family=Ubuntu&display=swap");
+    @font-face {
+      font-family: 'SF';
+      src: url('https://cdn.glitch.com/c5a2c49e-e6a6-462b-bc27-6589c7056565%2FSF.ttf?v=1626717935627') format('truetype');
+    }
     html,
     body {
       margin: 0;
@@ -31,7 +35,7 @@
       width: 0;
       height: 0;
       float: left;
-      padding: 1rem;
+      padding: 0;
       margin: 1rem;
       border-radius: 1em;
       background-color: #222222;
@@ -43,23 +47,17 @@
     }
     #sidebar:hover {
       box-shadow: 0px 0px 50px #222222;
-      margin: 0.75rem;
       transition-timing-function: cubic-bezier(0, 1, 0.5, 1.5);
     }
-    #maintext {
-      padding: 5%;
-      float: center;
-      width: 90%;
-      height: 100%;
-      font-size: 16px;
-      font-family: "Open Sans", sans-serif;
-      color: auto;
-      transition: 1s;
+    h1#Title {
+      font-family: "SF", Fallback, sans-serif;
+      font-size: 24pt;
+      text-align: center;
     }
     button {
+      overflow: hidden;
       background-color: #bfbfbf;
       width: 100%;
-      border: none;
       float: center;
       font-size: 24px;
       font-family: "Open Sans", sans-serif;
@@ -67,6 +65,7 @@
       font-size-adjust: 0.75;
       cursor: pointer;
       z-index: 1;
+      border: none;
     }
     button:hover {
       background-color: black;
@@ -132,6 +131,40 @@
     img.headinglogo {
       vertical-align: middle;
     }
+    #widget1 {
+      width: 15%;
+      height: 25%;
+      background-color: #545454;
+      color: white;
+      position: relative;
+      border-radius: 1em;
+      padding: 1rem;
+      font-size: 24px;
+      margin: 5rem;
+      font-family: "SF";
+      transition: 1s;
+      transform: perspective(800px);
+      overflow: hidden;
+      border: 5px solid black;
+      border-style: inset;
+    }
+    #widgetinner1 {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-color: black;
+      top: 0%;
+      left: 0%;
+      visibility: hidden;
+      transform: rotateY(180deg);
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    ins {
+      text-decoration: none;
+    }
   </style>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="manifest" href="/manifest.json" />
@@ -146,7 +179,7 @@
       href="https://cdn.glitch.com/c5a2c49e-e6a6-462b-bc27-6589c7056565%2Fpixel.png?v=1632321642330"
     />
   </head>
-  <meta id="theme" name="theme-color" content="#222222" />
+  <meta id="theme" name="theme-color" content="#000000" />
   <title>PixelByteDrive</title>
   <body id="background">
     <noscript
@@ -157,6 +190,9 @@
         style="display:none;visibility:hidden"
       ></iframe
     ></noscript>
+    <p id="notif" style="text-align: center;">
+      We've cleaned up a bit! To open the directory, press the logo.
+    </p>
     <div id="heading">
       <h1>
         <img
@@ -226,30 +262,38 @@
       <h2>
         <a href="legal/privacypolicy.html">Privacy Policy</a> •
         <a href="legal/license.md">License</a> •
-        <a href="mailto:killianus2008@pixeldrive.xyz">Email me</a>
+        <a href="mailto:hello@pixeldrive.xyz">Contact Us</a>
       </h2>
     </div>
     <!-- end of sidebar -->
   </body>
-  <div id="maintext">
-    <h1>
-      Homepage
-    </h1>
-    <hr />
-    <p>
-      Welcome to PixelByteDrive, a community of creating amazing experiences,
-      communication, and regular games.
-    </p>
-    <p>
-      This website was made and maintained by Killian and
-      <a href="/andrew.html">Andrew</a> (who is very, <i>very,</i> cool.) [/j
-      /nsrs]
-    </p>
-    <i
-      ><strike>Killian</strike> <strike>Andrew</strike> Killian did most of the
-      work.</i
-    >
+  <h1 id="Title">Latest Projects</h1>
+  <div id="widget1">
+    <b>Transitions.</b> 
+    <br>
+    <ins>See the future of PixelByteDrive</ins>
+    <div id="widgetinner1">Go to site</div>
   </div>
   <script src="PWA.js" defer></script>
   <script src="backend/scripts/homepage.js"></script>
+  <script>
+    var flipped = false
+    document.getElementById('widget1').onclick = function(){
+      if(flipped == false) {
+        flipped = true
+        document.getElementById('widget1').style.transform = "perspective(300px) rotateY(180deg)";
+        setTimeout(function(){
+          document.getElementById('widgetinner1').style.visibility = "visible";
+          document.getElementById('widget1').style.boxShadow = "0px 0px 10px grey";
+        },250)
+      } else {
+        flipped = false
+        document.getElementById('widget1').style.transform = "perspective(300px) rotateY(0deg)";
+        document.getElementById('widget1').style.boxShadow = "0px 0px 0px grey";
+        setTimeout(function(){
+          document.getElementById('widgetinner1').style.visibility = "hidden";
+        },250)
+      }
+    }
+  </script>
 </html>

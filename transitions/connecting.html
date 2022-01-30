@@ -49,31 +49,31 @@
     }
     #outer {
       position: absolute;
-      background-color: black;
+      background-color: rgb(50,50,50);
       width: 250px;
       height: 250px;
       transform: translate(-50%, -50%);
       top: 50%;
       left: 50%;
       border-radius: 250px;
-      border: 5px solid white;
       animation-name: connecting1;
       animation-duration: 3s;
       animation-iteration-count: infinite;
+      z-index: 0
     }
     #second {
       position: absolute;
-      background-color: black;
-      width: 200px;
+      background-color: rgb(150,150,150);
+      width: 200px;rgb(2rgb(1,255,255)
       height: 200px;
       transform: translate(-50%, -50%);
       top: 50%;
       left: 50%;
       border-radius: 250px;
-      border: 5px solid white;
       animation-name: connecting2;
       animation-duration: 3s;
       animation-iteration-count: infinite;
+      z-index: 1;
     }
     #inner {
       position: absolute;
@@ -87,6 +87,7 @@
       animation-name: inner;
       animation-duration: 3s;
       animation-iteration-count: infinite;
+      z-index: 2;
     }
   </style>
   <div id="outer">
