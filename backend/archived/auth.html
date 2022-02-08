@@ -233,13 +233,14 @@
     </div>
   </body>
   <footer>
+    <script src="../scripts/SHA.js"></script>
     <script>
       var submit = document.getElementById("submit");
       var password = document.getElementById("password");
       var textelement = document.getElementById("textelement");
-      var confirm = "admin";
+      var confirm = "d033e22ae348aeb5660fc2140aec35850c4da997";
       submit.onclick = function() {
-        if (password.value == confirm) {
+        if (SHA1(password.value) == confirm) {
           textelement.style.color = "#009933";
           textelement.innerHTML = "Access Granted";
           document.cookie = "unlocked=yes";
@@ -260,7 +261,7 @@
       };
       document.addEventListener("keyup", function(event) {
         if (event.key === "Enter") {
-          if (password.value == confirm) {
+          if (SHA1(password.value) == confirm) {
             textelement.style.color = "#009933";
             textelement.innerHTML = "Access Granted";
             document.cookie = "unlocked=yes";
