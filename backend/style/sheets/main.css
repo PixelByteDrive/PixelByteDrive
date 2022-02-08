@@ -6,6 +6,10 @@ body {
   overflow-x: hidden;
   overflow-x: 0;
   font-family: "Open Sans", sans-serif;
+  background-color: #000000;
+  /*background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23222222' points='800 100 0 200 0 800 1600 800 1600 200'/%3E%3Cpolygon fill='%23444444' points='800 200 0 400 0 800 1600 800 1600 400'/%3E%3Cpolygon fill='%23666666' points='800 300 0 600 0 800 1600 800 1600 600'/%3E%3Cpolygon fill='%23888888' points='1600 800 800 400 0 800'/%3E%3Cpolygon fill='%23aaaaaa' points='1280 800 800 500 320 800'/%3E%3Cpolygon fill='%23cccccc' points='533.3 800 1066.7 800 800 600'/%3E%3Cpolygon fill='%23EEE' points='684.1 800 914.3 800 800 700'/%3E%3C/g%3E%3C/svg%3E");*/
+  background-attachment: fixed;
+  background-size: cover;
 }
 #heading {
   text-align: left;
@@ -16,19 +20,17 @@ body {
   border-radius: 1em;
   margin: 1em;
   transition: 0.5s;
-  transition-timing-function: cubic-bezier(0, 1, 0.5, 1.5);
 }
 #heading:hover {
   box-shadow: 0px 0px 50px #222222;
-  margin: 0.625em;
-  transition-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+  margin: 0.975em;
 }
 #sidebar {
   border: 0px solid gray;
-  width: 0;
-  height: 0;
+  width: 10%;
+  height: 62.5%;
   float: left;
-  padding: 0;
+  padding: 1rem;
   margin: 1rem;
   border-radius: 1em;
   background-color: #222222;
@@ -36,11 +38,10 @@ body {
   z-index: 1;
   transition: 0.5s;
   opacity: 0;
-  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  position: fixed;
 }
 #sidebar:hover {
   box-shadow: 0px 0px 50px #222222;
-  transition-timing-function: cubic-bezier(0, 1, 0.5, 1.5);
 }
 #maintext {
   padding: 5%;
@@ -110,13 +111,6 @@ h3 {
 }
 .disabled {
   cursor: not-allowed;
-}
-html,
-body {
-  background-color: #000000;
-  /*background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23222222' points='800 100 0 200 0 800 1600 800 1600 200'/%3E%3Cpolygon fill='%23444444' points='800 200 0 400 0 800 1600 800 1600 400'/%3E%3Cpolygon fill='%23666666' points='800 300 0 600 0 800 1600 800 1600 600'/%3E%3Cpolygon fill='%23888888' points='1600 800 800 400 0 800'/%3E%3Cpolygon fill='%23aaaaaa' points='1280 800 800 500 320 800'/%3E%3Cpolygon fill='%23cccccc' points='533.3 800 1066.7 800 800 600'/%3E%3Cpolygon fill='%23EEE' points='684.1 800 914.3 800 800 700'/%3E%3C/g%3E%3C/svg%3E");*/
-  background-attachment: fixed;
-  background-size: cover;
 }
 h1 {
   color: #ffffff;

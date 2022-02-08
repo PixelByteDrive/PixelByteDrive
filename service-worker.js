@@ -1,7 +1,7 @@
 const CACHE_NAME = "offline";
 const OFFLINE_URL = "offline.html";
 
-self.addEventListener("install", function(event) {
+self.addEventListener("install", function (event) {
   console.log("[ServiceWorker] Install");
 
   event.waitUntil(
@@ -15,7 +15,7 @@ self.addEventListener("install", function(event) {
   self.skipWaiting();
 });
 
-self.addEventListener("activate", event => {
+self.addEventListener("activate", (event) => {
   console.log("[ServiceWorker] Activate");
   event.waitUntil(
     (async () => {
@@ -31,7 +31,7 @@ self.addEventListener("activate", event => {
   self.clients.claim();
 });
 
-self.addEventListener("fetch", function(event) {
+self.addEventListener("fetch", function (event) {
   // console.log('[Service Worker] Fetch', event.request.url);
   if (event.request.mode === "navigate") {
     event.respondWith(

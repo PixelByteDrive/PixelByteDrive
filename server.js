@@ -3,15 +3,15 @@ var online = process.env.online;
 var app = express();
 app.use(express.static(__dirname));
 if (online == "true") {
-  app.get("", function(request, response) {
+  app.get("", function (request, response) {
     response.sendFile(__dirname + "/homepage.html");
   });
 } else if (online == "update") {
-  app.get("", function(request, response) {
+  app.get("", function (request, response) {
     response.sendFile(__dirname + "/error/updating.html");
   });
 } else {
-  app.get("", function(request, response) {
+  app.get("", function (request, response) {
     response.sendFile(__dirname + "/error/maintenance.html");
   });
 }
@@ -36,28 +36,25 @@ if (online == "true") {
   client.on("ready", async () => {
     console.log(`bot is online!`);
     client.user.setActivity("no. | ?help | ?about | ?invite", {
-      type: "WATCHING"
+      type: "WATCHING",
     });
   });
 } else {
   client.on("ready", async () => {
     console.log(`bot is inactive.`);
     client.user.setActivity("a maintenance. | ?help | ?about | ?invite", {
-      type: "COMPETING"
+      type: "COMPETING",
     });
-    client.user.setStatus('idle')
+    client.user.setStatus("idle");
   });
 }
 
 client.login(process.env.token);
 
-client.on("messageCreate", async message => {
+client.on("messageCreate", async (message) => {
   let prefix = "?";
   let msg = message.content.toLowerCase();
-  let args = message.content
-    .slice(prefix.length)
-    .trim()
-    .split(" ");
+  let args = message.content.slice(prefix.length).trim().split(" ");
   let cmd = args.shift().toLowerCase();
 
   if (!message.content.startsWith(prefix)) return;
