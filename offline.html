@@ -1,35 +1,44 @@
-<!DOCTYPE html>
-<html>
-  <meta id="theme" name="theme-color" content="#222222" />
-  <head>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-  </head>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
-    rel="stylesheet"
+<body
+  style="
+    font-family: segoe ui, 'Open Sans', sans-serif;
+    background: black;
+    color: white;
+    text-align: center;
+  "
+>
+  <img
+    src="https://cdn.glitch.com/c5a2c49e-e6a6-462b-bc27-6589c7056565%2Fpixel.png?v=1632321642330"
+    id="widget1"
   />
   <style>
-    html,
-    body {
-      background-color: #222222;
-    }
-    .everything {
+    #widget1 {
+      transition: 0.5s;
+      transform: perspective(600px) translate(-50%,-50%);
+      width: 250px;
+      height: 250px;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
-      position: fixed;
-      text-align: center;
-      color: #ffffff;
-      font-family: "Roboto", sans-serif;
+      position: absolute;
     }
   </style>
-  <title>No internet.</title>
-  <div class="everything">
-    <h1 class="animate__animated animate__jello">Dang internetttttt.</h1>
-  </div>
-</html>
+  <meta name="theme-color" content="#000000">
+  <p>Server is down, or you are not connected to the internet.</p>
+  <script>
+    var flipped = false
+    document.getElementById('widget1').onclick = function(){
+      if(flipped == false) {
+        flipped = true
+        document.getElementById('widget1').style.transform = "perspective(300px) rotateY(180deg) translate(-50%,-50%)";
+        setTimeout(function(){
+          document.getElementById('widget1').style.backgroundColor = "white";
+          document.getElementById('widgetinner1').style.visibility = "visible";
+        },250)
+      } else {
+        flipped = false
+        document.getElementById('widget1').style.transform = "perspective(300px) translate(-50%,-50%)";
+        document.getElementById('widget1').style.boxShadow = "0px 0px 0px grey";
+        document.getElementById('widget1').style.backgroundColor = "black";
+      }
+    }
+  </script>
+</body>

@@ -14,3 +14,4 @@ document.getElementById("logo").addEventListener("click", function() {
     document.getElementById("logo").style.transform = "rotateY(0deg)";
   }
 });
+document.getElementsByClassName()

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html id="background">
+  <style>
+    html, body {
+      background-color: black;
+      overflow: hidden;
+      animation-name: backgroundcolor;
+      animation-duration: 10s;
+      animation-iteration-count: infinite;
+    }
+    #warp {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 20000px;
+      height: 20000px;
+      transform: translate(-50%, -50%) perspective(800px) rotateY(-180deg);
+      animation-timing-function: cubic-bezier(0,0,.58,1);
+      animation-name: transition1;
+      animation-duration: 2.5s;
+    }
+    @keyframes transition1 {
+      0% {
+        top: 50%;
+        left: 50%;
+        width: 500px;
+        height: 500px;
+        transform: translate(-50%, -50%) perspective(800px) rotateY(0deg);
+        animation-timing-function: cubic-bezier(0,0,.58,1);
+      }
+      100% {
+        top: 50%;
+        left: 50%;
+        width: 20000px;
+        height: 20000px;
+        transform: translate(-50%, -50%) perspective(800px) rotateY(-180deg);
+        animation-timing-function: cubic-bezier(0,0,.58,1);
+      }
+    }
+  </style>
+  <img src="https://cdn.glitch.com/c5a2c49e-e6a6-462b-bc27-6589c7056565%2Fpixel.png?v=1632321642330" id="warp">
+  <script src="https://www.pixelbytedrive.xyz/backend/dialog.js"></script>
+</html>

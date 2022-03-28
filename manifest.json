@@ -1,6 +1,5 @@
 {
   "background_color": "#000000",
-  "theme_color": "#000000",
   "description": "PixelByteDrive is a community full of amazing and weird things.",
   "display": "minimal-ui",
   "icons": [
@@ -13,5 +12,19 @@
   "name": "PixelByteDrive",
   "short_name": "Pixel",
   "start_url": "/homepage.html",
-  "scope": "/"
+  "scope": "/",
+  "shortcuts": [
+    {
+      "name": "Home",
+      "url": "/homepage.html"
+    },
+    {
+      "name": "DevPortal",
+      "url": "/backend/archived/auth.html"
+    },
+    {
+      "name": "Play a game",
+      "url": "https://pixelbytedrive.xyz/mario.html"
+    }
+  ]
 }
