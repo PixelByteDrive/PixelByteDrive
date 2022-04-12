@@ -44,9 +44,9 @@
     #background {
       opacity: 0.75;
       position: absolute;
-      top: 0%;
+      top: 50%;
       left: 50%;
-      transform: translate(-50%,0%);
+      transform: translate(-50%,-50%);
       animation-name: bg;
       animation-duration: 4s;
       width: 100%;
@@ -54,19 +54,19 @@
       transition: 0.75s;
     }
     #container {
-      width: 100%;
-      height: 25%;
+      width: 90%;
+      height: 90%;
       transform: translate(-50%,-100%);
       top: 100%;
       left: 50%;
       position: absolute;
-      background-image: linear-gradient(transparent, black);
       animation-name: container;
       animation-duration: 4s;
-      transition: 1.5s;
+      transition: 0.75s;
       opacity: 0.75;
       overflow: hidden;
-      color: white;
+      color: black;
+      background-color: white;
     }
     #seemore {
       width: 100%;
@@ -78,7 +78,7 @@
       border: none;
       overflow: hidden;
       background: none;
-      color: white;
+      color: black;
     }
   </style>
   <img id="background" src="https://cdn.glitch.me/c5a2c49e-e6a6-462b-bc27-6589c7056565%2Fwallpaper.webp?v=1637261928826">
@@ -95,36 +95,22 @@
       open = true
       document.getElementById('container').style.height = "100%";
       document.getElementById('container').style.opacity = "1";
-      document.getElementById('background').style.opacity = "0";
-      document.getElementById('background').style.filter = "blur(100px)";
-      document.getElementById('background').style.transform = "translate(-50%,-50%)";
-      document.getElementById('background').style.height = "90%";
-      document.getElementById('background').style.width = "90%";
-      document.getElementById('background').style.top = "50%";
-      document.getElementById('background').style.left = "50%";
+      document.getElementById('background').style.filter = "blur(48px)";
+      document.getElementById('background').style.width = "200%";
+      document.getElementById('background').style.height = "200%";
       document.getElementById('container').style.overflow = "show";
-      document.getElementById('container').style.backgroundImage = "none";
-      document.getElementById('container').style.backgroundColor = "white";
       document.getElementById('seemore').innerHTML = "Less";
-      document.getElementById('container').style.color = "black";
-      document.getElementById('seemore').style.color = "black";
+      document.getElementById('container').style.width = "100%";
      } else {
       open = false
-      document.getElementById('container').style.height = "25%";
+      document.getElementById('container').style.height = "90%";
       document.getElementById('container').style.opacity = "0.75";
-      document.getElementById('background').style.opacity = "1";
       document.getElementById('background').style.filter = "blur(0px)";
-      document.getElementById('background').style.transform = "translate(-50%,-0%)";
-      document.getElementById('background').style.height = "100%";
       document.getElementById('background').style.width = "100%";
-      document.getElementById('background').style.top = "0%";
-      document.getElementById('background').style.left = "50%";
+      document.getElementById('background').style.height = "100%";
       document.getElementById('container').style.overflow = "hidden";
       document.getElementById('seemore').innerHTML = "More";
-      document.getElementById('container').style.backgroundColor = "transparent";
-      document.getElementById('container').style.backgroundImage = "linear-gradient(transparent, black)";
-      document.getElementById('container').style.color = "white";
-      document.getElementById('seemore').style.color = "white";
+      document.getElementById('container').style.width = "90%";
      }
     }
   </script>

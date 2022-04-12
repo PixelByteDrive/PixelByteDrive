@@ -7,7 +7,7 @@ This project is partially closed-source, with open-sourced elements. By using an
 -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="day dark-scheme">
   <link rel="stylesheet" href="backend/style/sheets/main.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="manifest" href="/manifest.json" />
@@ -22,18 +22,10 @@ This project is partially closed-source, with open-sourced elements. By using an
       href="https://cdn.glitch.com/c5a2c49e-e6a6-462b-bc27-6589c7056565%2Fpixel.png?v=1632321642330"
     />
   </head>
-  <meta id="theme" name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: white)">
   <title>PixelByteDrive</title>
   <body id="background">
-    <noscript
-      ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-TF3BQQ4"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe
-    ></noscript>
-    <br>
     <div id="heading">
       <h1>
         <img
@@ -45,21 +37,21 @@ This project is partially closed-source, with open-sourced elements. By using an
         ixelByteDrive
       </h1>
     </div>
-    <div id="sidebar">
+    <nav id="sidebar">
       <button
-        trans="document.location='https://www.pixeldrive.xyz/homepage.html'"
+        trans="document.location='homepage.html'"
         title="Home"
       >
         Home
       </button>
       <button
-        onclick="document.location='https://pixeldrive.padlet.org/andrewjchen/PixelByteNews'"
+        onclick="document.location='https://pixelbytedrive.padlet.org/andrewjchen/PixelByteNews'"
         title="Updates"
       >
         Updates
       </button>
       <button
-        onclick="document.location='backend/auth.html'"
+        onclick="document.location='backend/archived/auth.html'"
         title="Developer Portal"
       >
         DevPortal
@@ -82,11 +74,11 @@ This project is partially closed-source, with open-sourced elements. By using an
       <h2>
         <a href="legal/privacypolicy.html">Privacy Policy</a> •
         <a href="legal/license.md">License</a> •
-        <a href="mailto:hello@pixeldrive.xyz">Contact Us</a>
+        <a href="mailto:hello@pixelbytedrive.xyz">Contact Us</a>
       </h2>
-    </div>
+    </nav>
     <!-- end of sidebar -->
-    <div id="maintext">
+    <div id="maintext" class="night">
       <h1>Homepage</h1>
       <hr />
       <p>

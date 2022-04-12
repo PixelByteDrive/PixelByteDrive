@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html id="background">
+  <style>
+    html, body {
+      background-color: black;
+      overflow: hidden;
+      animation-name: backgroundcolor;
+      animation-duration: 10s;
+      animation-iteration-count: infinite;
+    }
+    #warp {
+      background-color: white;
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      width: 50%;
+      height: 50%;
+      transform: translate(-100%, -50%) perspective(400px) rotateY(-15deg);
+      animation-name: transition1;
+      animation-duration: 10s;
+      animation-iteration-count: infinite;
+    }
+    #warp2 {
+      background-color: black;
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      width: 50%;
+      height: 50%;
+      transform: translate(-100%, -50%) perspective(400px) rotateY(-15deg);
+      animation-name: transition2;
+      animation-duration: 10s;
+      animation-iteration-count: infinite;
+      visibility: hidden;
+    }
+    @keyframes transition1 {
+      0% {
+        top: 50%;
+        left: 50%;
+        width: 1000%;
+        height: 1000%;
+        transform: translate(-50%, -50%) perspective(200px) rotateY(-85deg);
+        animation-timing-function: cubic-bezier(0,0,.58,1);
+      }
+      25% {
+        top: 50%;
+        left: 50%;
+        width: 75%;
+        height: 75%;
+        transform: translate(-50%, -50%) perspective(200px) rotateY(0deg);
+        animation-timing-function: cubic-bezier(0,0,.58,1);
+      }
+      50% {
+        top: 50%;
+        left: 50%;
+        width: 1000%;
+        height: 1000%;
+        transform: translate(-50%, -50%) perspective(200px) rotateY(85deg);
+        animation-timing-function: cubic-bezier(.42,0,1,1);
+      }
+      100% {
+        top: 50%;
+        left: 50%;
+        width: 1000%;
+        height: 1000%;
+        transform: translate(-50%, -50%) perspective(200px) rotateY(85deg);
+        animation-timing-function: cubic-bezier(.42,0,1,1);
+      }
+    }
+    @keyframes transition2 {
+      0% {
+        top: 50%;
+        left: 50%;
+        width: 1000%;
+        height: 1000%;
+        transform: translate(-50%, -50%) perspective(200px) rotateY(-85deg);
+        animation-timing-function: cubic-bezier(0,0,.58,1);
+      }
+      50% {
+        top: 50%;
+        left: 50%;
+        width: 1000%;
+        height: 1000%;
+        transform: translate(-50%, -50%) perspective(200px) rotateY(-85deg);
+        animation-timing-function: cubic-bezier(0,0,.58,1);
+      }
+      75% {
+        top: 50%;
+        left: 50%;
+        width: 75%;
+        height: 75%;
+        transform: translate(-50%, -50%) perspective(200px) rotateY(0deg);
+        animation-timing-function: cubic-bezier(0,0,.58,1);
+      }
+      100% {
+        top: 50%;
+        left: 50%;
+        width: 1000%;
+        height: 1000%;
+        transform: translate(-50%, -50%) perspective(200px) rotateY(85deg);
+        animation-timing-function: cubic-bezier(.42,0,1,1);
+      }
+    }
+  </style>
+  <div id="warp"></div>
+  <div id="warp2"></div>
+  <script src="https://www.pixelbytedrive.xyz/backend/dialog.js"></script>
+  <script>
+  var myInterval = setInterval(function() {
+      document.getElementById('background').style.backgroundColor = "white";
+      document.getElementById('warp2').style.visibility = "visible";
+      document.getElementById('warp').style.visibility = "hidden";
+  }, 5000);
+  var myInterval = setInterval(function() {
+      document.getElementById('background').style.backgroundColor = "black";
+      document.getElementById('warp2').style.visibility = "hidden";
+      document.getElementById('warp').style.visibility = "visible";
+  }, 10000);
+  </script>
+</html>
