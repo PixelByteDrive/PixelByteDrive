@@ -3,8 +3,7 @@ const http = require("http");
 var express = require("express");
 var app = express();
 app.get("/", (request, response) => {
-  console.log(Date.now() + "Ping Received");
-  response.sendStatus(200);
+  console.log(Date.now() + " Ping Received");
 });
 app.listen(6942);
 const Discord = require("discord.js");

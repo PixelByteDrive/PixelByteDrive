@@ -4,7 +4,6 @@ var express = require("express");
 var app = express();
 app.get("/", (request, response) => {
   console.log(Date.now() + "Ping Received");
-  response.sendStatus(200);
 });
 app.listen(6934);
 const { Client, Intents } = require('discord.js');

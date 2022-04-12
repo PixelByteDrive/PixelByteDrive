@@ -23,22 +23,4 @@
   </style>
   <meta name="theme-color" content="#000000">
   <p>Server is down, or you are not connected to the internet.</p>
-  <script>
-    var flipped = false
-    document.getElementById('widget1').onclick = function(){
-      if(flipped == false) {
-        flipped = true
-        document.getElementById('widget1').style.transform = "perspective(300px) rotateY(180deg) translate(-50%,-50%)";
-        setTimeout(function(){
-          document.getElementById('widget1').style.backgroundColor = "white";
-          document.getElementById('widgetinner1').style.visibility = "visible";
-        },250)
-      } else {
-        flipped = false
-        document.getElementById('widget1').style.transform = "perspective(300px) translate(-50%,-50%)";
-        document.getElementById('widget1').style.boxShadow = "0px 0px 0px grey";
-        document.getElementById('widget1').style.backgroundColor = "black";
-      }
-    }
-  </script>
 </body>

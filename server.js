@@ -19,6 +19,12 @@ app.use((req, res) => {
   res.status(404).sendFile(__dirname + "/error/404.html");
 });
 app.use((req, res) => {
+  res.status(414).sendFile(__dirname + "/error/404.html");
+});
+app.use((req, res) => {
   res.status(403).sendFile(__dirname + "/error/403.html");
+});
+app.use((req, res) => {
+  res.status(503).sendFile(__dirname + "/error/maintenance.html");
 });
 app.listen(8080);

@@ -25,7 +25,6 @@ body {
 }
 #heading:hover {
   box-shadow: 0px 0px 10px #222222;
-  margin: 0.975em;
 }
 #sidebar {
   border: 0px solid gray;
