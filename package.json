@@ -3,21 +3,16 @@
   "main": "server.js",
   "homepage": "https://www.pixelbytedrive.xyz/",
   "scripts": {
-    "start": "node server.js & node bot.js & node backend/funbot/server.js"
+    "start": "node server.js & node backend/scripts/karmabot.js"
   },
   "engines": {
-    "node": "v16.12.0",
-    "npm": "7.20.6"
+    "node": "v16.14.2"
   },
   "dependencies": {
-    "@material/dialog": "^13.0.0",
-    "@material/progress-indicator": "^13.0.0",
-    "@material/ripple": "^13.0.0",
-    "Base64": "^1.1.0",
-    "crypto-js": "^4.1.1",
-    "discord.js": "^13.6.0",
-    "express": "^4.17.3"
-  },
-  "license": "Apache-2.0",
-  "version": "1.0.0"
+    "axios": "^1.0.0",
+    "discord.js": "^14.5.0",
+    "express": "^4.18.1",
+    "mongoose": "^6.6.4",
+    "random-string": "^0.2.0"
+  }
 }
