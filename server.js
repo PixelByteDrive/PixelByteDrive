@@ -4,7 +4,7 @@ const express = require("express");
 var app = express();
 app.use(express.static(__dirname));
 app.get("/", function (request, response) {
-  response.status(503).end();
+  response.sendFile(__dirname + "/homepage.html")
 });
 app.listen(8080);
 
