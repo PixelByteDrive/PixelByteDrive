@@ -24,7 +24,7 @@ export default function RootLayout({
         className={`${geistSans.className} antialiased flex w-full justify-center`}
       >
         <div className="max-w-6xl min-h-screen h-fit border-x-gray-800 flex-col w-full border-x-1 flex border-dashed">
-          <div className="p-6 flex items-center gap-4 border-b-1 border-b-gray-800 border-dashed">
+          <div className="p-6 flex items-center gap-4 backdrop-blur-lg backdrop-brightness-50 fixed w-full max-w-6xl">
             <Image src="./logo.svg" alt="Site logo" width={32} height={32}/>
           </div>
           {children}

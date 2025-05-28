@@ -2,16 +2,16 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div>
+    <div className="mt-20">
       {/* Introductory Hero Section */}
-      <div className="p-16 flex gap-6 flex-col min-h-3/4 justify-center">
+      <div className="p-16 flex gap-6 bg-[url(/backgrounds/background1.jpg)] flex-col min-h-3/4 justify-center">
         <h1 className="text-7xl">What's up?</h1>
         <p className="text-2xl">The real world calls me <b className="font-black">Killian</b>, but out here I prefer to be called <b className="font-black">Pixel</b>.</p>
         <p className="text-2xl">After all, I'm just a guy who does all sorts of things. I like to fiddle with things and build profound experiences.</p>
       </div>
       {/* Current Ventures Section */}
       <div className="p-16 flex gap-8 flex-col min-h-96 justify-center">
-        <h1 className="text-7xl">My current adventures</h1>
+        <h1 className="text-5xl">My current adventures</h1>
         {/* Lua */}
         <div className="border-1 border-gray-800 rounded-2xl flex p-8 gap-6 items-center">
           <Image src="/icons/lua.png" width={96} height={96} alt="Lua logo"/>
