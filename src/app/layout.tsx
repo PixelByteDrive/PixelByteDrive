@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
+import Link from "next/link";
 
 const geistSans = Plus_Jakarta_Sans({
   variable: "--font-Plus_Jakarta_Sans",
@@ -25,7 +26,11 @@ export default function RootLayout({
       >
         <div className="max-w-6xl min-h-screen h-fit border-x-gray-800 flex-col w-full border-x-1 flex border-dashed">
           <div className="p-6 flex items-center gap-4 backdrop-blur-lg backdrop-brightness-50 fixed w-full max-w-6xl">
-            <Image src="./logo.svg" alt="Site logo" width={32} height={32}/>
+            <Image src="./logo.svg" className="flex-none" alt="Site logo" width={32} height={32}/>
+            <div className="flex-2 flex justify-end items-center gap-4">
+              <Link href="page.tsx">PixelByteDrive</Link>
+              <Link href="page.tsx">Home</Link>
+            </div>
           </div>
           {children}
         </div>
