@@ -7,13 +7,13 @@ export default function Home() {
       {/* Introductory Hero Section */}
       <div className="bg-[url(/backgrounds/background1.jpg)] bg-fixed min-h-screen justify-center">
         <div className="p-32 flex gap-6 bg-linear-to-t from-black/0 to-black/100 flex-col min-h-screen justify-center">
-          <h1 className="text-5xl text-center font-black" id="IntroText">What's up?</h1>
+          <h1 className="text-5xl text-center font-black" id="IntroText">What&apos;s up?</h1>
         </div>
       </div>
       {/* Some Info Section */}
       <div className="p-24 flex gap-6 flex-col min-h-3/4 justify-center">
         <p className="text-2xl">The real world calls me <b className="font-black">Killian</b> (he/him btw), but online I prefer to be called <b className="font-black">Pixel</b>.</p>
-        <p className="text-2xl">After all, I'm just a guy who does all sorts of things. I like to fiddle with things and build profound experiences.</p>
+        <p className="text-2xl">After all, I&apos;m just a guy who does all sorts of things. I like to fiddle with things and build profound experiences.</p>
       </div>
       {/* Current Ventures Section */}
       <div className="p-16 flex gap-8 flex-col min-h-96 justify-center">
@@ -31,14 +31,14 @@ export default function Home() {
           <Image src="/icons/swift.png" width={96} height={96} alt="Swift logo"/>
           <div className="flex flex-col">
             <h1 className="text-3xl font-bold">Swift</h1>
-            <h1 className="text-xl">Swift is an incredibly impressionable language to me and I am excited to explore what it has to offer as a segue to learning actual compiled languages. Often times, people may say that it is only for Apple platforms, but now that it's become universal it's much more useful than ever!</h1>
+            <h1 className="text-xl">Swift is an incredibly impressionable language to me and I am excited to explore what it has to offer as a segue to learning actual compiled languages. Often times, people may say that it is only for Apple platforms, but now that it&apos;s become universal it&apos;s much more useful than ever!</h1>
           </div>
         </div>
       </div>
       {/* Skills Section */}
       <div className="p-16 flex gap-8 flex-col min-h-96 justify-center">
         <h1 className="text-5xl">What do I use?</h1>
-        <h1 className="text-3xl font-bold">A lot, actually. Let's take a look!</h1>
+        <h1 className="text-3xl font-bold">A lot, actually. Let&apos;s take a look!</h1>
         {/* List */}
         <div className="grid grid-cols-4 sm:grid-cols-6 xl:grid-cols-12 gap-8">
           <Image src={"/icons/nodejs.png"} alt="NodeJS logo" width={48} height={48}/>
@@ -73,7 +73,7 @@ export default function Home() {
         <h1 className="text-2xl">At this time, I am not publicly looking to be hired for any commissions. I sincerely appreciate your consideration in my work so far and I will continue to post more when I can!</h1>
       </div>
       <div className="p-16 py-40 flex gap-8 flex-col min-h-96 text-center justify-center">
-        <h1 className="text-5xl">You're still here?</h1>
+        <h1 className="text-5xl">You&apos;re still here?</h1>
         <h1 className="text-2xl">Perhaps you can come find me elsewhere...</h1>
         <div className="flex justify-center items-center gap-8">
           <Link href="https://bsky.app/profile/pixelbytedrive.xyz">
