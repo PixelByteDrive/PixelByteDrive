@@ -25,12 +25,8 @@ export default function RootLayout({
         className={`${geistSans.className} antialiased flex w-full justify-center`}
       >
         <div className="max-w-6xl min-h-screen h-fit border-x-gray-800 flex-col w-full border-x-1 flex border-dashed">
-          <div className="p-6 flex items-center gap-4 backdrop-blur-lg backdrop-brightness-50 fixed w-full max-w-6xl">
+          <div className="p-6 z-10 flex items-center justify-center gap-4 backdrop-blur-lg backdrop-brightness-50 fixed w-full max-w-6xl">
             <Image src="./logo.svg" className="flex-none" alt="Site logo" width={32} height={32}/>
-            <div className="flex-2 flex justify-end items-center gap-4">
-              <Link href="page.tsx">PixelByteDrive</Link>
-              <Link href="page.tsx">Home</Link>
-            </div>
           </div>
           {children}
         </div>
